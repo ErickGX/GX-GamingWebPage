@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+.logo {
+    margin-right: 10rem; /* Ajuste a margem conforme necessário */
+}
+
+.logo img {
+    max-width: 70px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+
+ul.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+ul.nav-links li {
+    margin: 0 1rem; /* Ajuste a margem conforme necessário */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+li {
+    margin: 0.5rem;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+}
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff00ff;
+    border-color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+
+
+@media (max-width: 600px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
