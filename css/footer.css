@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+
+footer{
+    width: 100%; /* Certifica-se de que o footer ocupe toda a largura */
+    position: relative; /* Remove o sticky */
+    text-align: center;
+}
+
+
 .footer {
     background: rgba(0, 0, 0, 0.8);
     color: #00ffff;
     padding: 2rem 1rem;
     font-family: 'VT323', monospace;
+    position:sticky;
+    bottom: 0;
 }
 
 .footer-content {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -52,14 +61,6 @@
     text-align: center;
 }
 
-
-footer{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-}
 
 
 @media (min-width: 768px) {
