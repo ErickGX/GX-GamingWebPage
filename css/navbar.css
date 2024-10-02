@@ -22,13 +22,6 @@ ul.nav-links {
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
-}
-
-ul.nav-links li {
-    margin: 0 1rem; /* Ajuste a margem conforme necessário */
-}
-
-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -36,6 +29,11 @@ ul {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+ul.nav-links li {
+    margin: 0 1rem; /* Ajuste a margem conforme necessário */
+}
+
 
 li {
     margin: 0.5rem;
@@ -46,7 +44,7 @@ nav {
     padding: 1rem;
 }
 
-a {
+.nav-links>li > a {
     color: #00ffff;
     text-decoration: none;
     font-size: 1.5rem;

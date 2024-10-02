@@ -1,13 +1,16 @@
-main{
-
+main {
     margin-left: 10vw;
     margin-right: 10vw;
-    margin-top: 100px;
-    flex: 1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    row-gap: 20px;
+
 }
 
 
-.divisoria1, .divisoria2{
+.divisoria1,
+.divisoria2 {
     margin-top: 10px;
     height: 40vh;
     padding-top: 10px;
@@ -15,69 +18,48 @@ main{
     padding-left: 20px;
     padding-right: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden; /* Esconde as divs que ultrapassam o tamanho da div pai */
+    white-space: nowrap; /* Impede a quebra das divs para a linha de baixo */
     align-items: center;
-}
-
-
-.divisoria1{
-background-color: #FF6AD5;
-border: 1px solid blue;
 
 }
 
-.divisoria2{
-background-color: #C774E8;
-border: 1px solid whitesmoke;
+
+.divisoria1 {
+    background-color: #FF6AD5;
+    border: 1px solid blue;
+
 }
 
+.divisoria2 {
+    background-color: #C774E8;
+    border: 1px solid whitesmoke;
+}
 
-.card{
-    color: black;
-    background-color: white;
-    border: 4px solid ;
-    height: 240px;
-    width: 20%;
-    transition: width 0.3s ease; /* Transição suave ao redimensionar */
+.card {
+    border: 2px solid black;
+    max-height: 100%;
+    max-width: 100%;
+    width: 400px; /* Defina a largura dos cards */
+    height: 350px; /* Defina a altura dos cards */
+    margin: 10px; /* Espaçamento entre os cards */
+    background-color: yellow; /* Cor de fundo para os cards */
+    line-height: 300px; /* Centraliza o texto verticalmente  Impede o redimensionamento e mantém o tamanho fixo */
 }
 
 .cardImage{
-    width: 100%; /* Faz a imagem ocupar 100% da largura da div */
-    height: auto; /* Mantém a proporção original da imagem */
-    display: block; /* Remove espaços brancos em imagens inline */
-}
-
-.cardFooter, i{
-    display: inline;
-    flex-direction: column;
-}
-
-.descricao{
-    font-size: 1rem;
+    border: 1px solid red;
+    max-width: 100%;
+    height: 60vh;
+    max-height: 70%;
 
 }
-.apartir{
- 
-    color: grey;
-    font-size: 20px;
-    display: inline;
+
+.cardFooter{
+    border: 1px solid black;
+    max-width: 100%;
+    height: 60vh;
+    max-height: 30%;
 }
-.valor{
-    display: inline;
-    font-size: 1rem;
-}
-
-#btnselecionar{
-    background-color: green;
-    color:white;
-    padding: 10px ;
-    font-weight: bold;
-    border-radius: 10px;
-    font-size:10px;
-    border-bottom: 320px;
-    display: block;
-}
-
-
-

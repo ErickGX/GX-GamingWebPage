@@ -1,124 +1,144 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Homepage</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importar Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
 
     <main>
-
-
-        <div class="divisoria1">
-
-            <div class="card">
+          <!-- divs de conteudo da apgina -->
+      <div class="divisoria1">
+        <!-- Início da estrutura do Swiper -->
+        <div class="swiper">
+          <!-- Adicione o swiper-wrapper ao redor dos slides -->
+          <div class="swiper-wrapper">
+            <!-- Cada slide tem a classe swiper-slide -->
+            <div class="swiper-slide">
+              <div class="card">
                 <div class="cardImage">
-                    <img src="images/diablo4img.png" height="130px" width="100%" alt="imagem do jogo">
+                  <a href="/images/gow-ragnarok.jpg">
+                    <img src="/images/gow-ragnarok.jpg" alt="God of War Ragnarok" />
+                  </a>
                 </div>
                 <div class="cardFooter">
-                    <p class="descricao">
-                        <i class="fab fa-xbox fa-1x" style="margin-right: 5px; color: green;"></i> <!-- Ícone da PSN -->
-                        Diablo IV Ultimate Edition - Xbox Series X|S
-                    </p>
-                    <p class="apartir">A Partir de :</p>
-                    <p class="valor">R$199,00</p>
-                    <button  id="btnselecionar">COMPRAR</button>
+                  <p>God of War Ragnarok</p>
                 </div>
+              </div>
             </div>
 
-            <div class="card">
-
+            <div class="swiper-slide">
+              <div class="card">
                 <div class="cardImage">
-                    <img src="images/gow-ragnarok.jpg" height="130px" width="100%" alt="imagem do jogo">
+                  <a href="/images/card-2.jpg">
+                    <img src="/images/card-2.jpg" alt="Card 2" />
+                  </a>
                 </div>
-
                 <div class="cardFooter">
-                    <p class="descricao"></p>
-                        <i class="fab fa-playstation fa-1x" style="margin-right: 5px; color: blue;"></i> <!-- Ícone da PSN -->
-                        God of War Ragnarök - Digital Deluxe Edition 
-                    </p>
-                    <p class="apartir">A Partir de :</p>
-                    <p class="valor">R$299,00</p>
-                    <button  id="btnselecionar">COMPRAR</button>
-
+                  <p>Card 2</p>
                 </div>
-
+              </div>
             </div>
 
-            <div class="card">
-
+            <div class="swiper-slide">
+              <div class="card">
                 <div class="cardImage">
-                    <img src="images/undertale.jpg" height="130px" width="100%" alt="imagem do jogo">
+                  <a href="/images/card-3.jpg">
+                    <img src="/images/card-3.jpg" alt="Card 3" />
+                  </a>
                 </div>
-
                 <div class="cardFooter">
-                    <p class="descricao"></p>
-                    <i class="fab fa-steam fa-1x" style="margin-right: 5px; color: rgb(43, 43, 136);"></i>
-                        Undertale - Steam GOLD edition Key 
-                    </p>
-                    <p class="apartir">A Partir de :</p>
-                    <p class="valor">R$23,00</p>
-                    <button  id="btnselecionar">COMPRAR</button>
+                  <p>Card 3</p>
                 </div>
-
+              </div>
             </div>
 
-            <div class="card">
-
-                <div class="cardImage">
-                    <img src="images/farcry6.jpg" height="130px" width="100%" alt="imagem do jogo">
+            <div class="swiper-slide">
+                <div class="card">
+                  <div class="cardImage">
+                    <a href="/images/card-3.jpg">
+                      <img src="/images/card-3.jpg" alt="Card 3" />
+                    </a>
+                  </div>
+                  <div class="cardFooter">
+                    <p>Card 3</p>
+                  </div>
                 </div>
+              </div>
 
-                <div class="cardFooter">
-                    <p class="descricao">
-                    <i class="fab fa-steam fa-1x" style="margin-right: 5px; color: rgb(43, 43, 136);"></i>
-                        Far Cry 6 -    Steam Deluxe Edition
-                    </p>
-                    <p class="apartir">A Partir de :</p>
-                    <p class="valor">R$23,00</p>
-                    <button  id="btnselecionar">COMPRAR</button>
-                </div>
+          </div>
 
-            </div>
+          <!-- Adiciona a paginação (opcional) -->
+          <div class="swiper-pagination"></div>
 
+          <!-- Botões de navegação (opcional) -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
-
-
-
+          <!-- Scrollbar (opcional) -->
+          <div class="swiper-scrollbar"></div>
         </div>
+        <!-- Fim da estrutura do Swiper -->
+      </div>
 
-        <div class="divisoria2">
-
-
-
-        </div>
-
-
-        <div class="divisoria1">
-
-        </div>
-
-        <div class="divisoria2">
-
-        </div>
-
-
-
-
+      <div class="divisoria2"></div>
+      <div class="divisoria1"></div>
+      <div class="divisoria2"></div>
     </main>
 
     <div id="footer"></div>
-    <script src="js/modularizar.js"></script>
-</body>
 
+    <!-- Scripts -->
+    <script src="js/modularizar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Inicialização do SwiperJS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
+          // Configurações opcionais
+          direction: 'horizontal',
+          loop: false,
+
+          
+
+          // Paginação
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            slidesPerView : 3
+          },
+
+          // Botões de navegação
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          // Scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        });
+      });
+    </script>
+  </body>
 </html>
