@@ -77,3 +77,9 @@ main {
   height: 100%;
   object-fit: fill; /* ou 'contain', 'fill', 'scale-down' */
   }
+
+.swiper-slide{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
