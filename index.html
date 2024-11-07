@@ -6,186 +6,190 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Importar Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
     <div id="header"></div>
 
     <main>
-        <!-- divs de conteudo da apgina -->
-        <div class="divisoria1">
-            <!-- Início da estrutura do Swiper -->
-            <div class="swiper">
-                <!-- Adicione o swiper-wrapper ao redor dos slides -->
-                <div class="swiper-wrapper">
-                    <!-- Cada slide tem a classe swiper-slide -->
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="cardImage">
-                                <img src="/images/gow-ragnarokFUL.avif" alt="God of War Ragnarok"
-                                    class="responsive-image" />
-                                
-                            </div>
-
-
-                            <!-- <i class="fa-brands fa-playstation fa-2x" style="color: blue;"></i>
-<i class="fa-brands fa-xbox fa-2x" style="color: green;"></i>
-<i class="fa-brands fa-steam fa-2x" style="color: darkblue;"></i> -->
-
-                            <div class="cardFooter">
-                                <i class="fa-brands fa-playstation fa-2x"></i>
-                                <i class="fa-brands fa-playstation fa-2x" style="color: blue;"></i>
-                               <p>Lorem ipsum dolor sit amet consectetur adipisicing el</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="cardImage">
-
-                                <img src="/images/diablo-4-1024x1024.jpg" alt="God of War Ragnarok"
-                                    class="responsive-image" />
-                            </div>
-                            <div class="cardFooter">
-                                <p>Card 2</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="cardImage">
-
-                                <img src="/images/gta5-1024x1024.avif" alt="God of War Ragnarok"
-                                    class="responsive-image" />
-                            </div>
-                            <div class="cardFooter">
-                                <p>Card 3</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="cardImage">
-
-                                <img src="/images/farcry6.jpg" alt="God of War Ragnarok" class="responsive-image" />
-
-                            </div>
-                            <div class="cardFooter">
-                                <p>God OF war Ragnarok</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <div class="card">
-                            <div class="cardImage">
-
-                                <img src="/images/undertale-1024x1024.jpg" alt="God of War Ragnarok"
-                                    class="responsive-image" />
-
-                            </div>
-                            <div class="cardFooter">
-                                <div class="icon">
-
-                                </div>
-                            </div>
-                        </div>
+        <div class="container">
+             <!--CARD JOGO 1-->
+             <div class="card">
+                <div class="imgJogo">
+                    <img class="img" src="/images/diablo-4-1024x1024.jpg" alt="sua descrição aqui">
+                </div>
+                <div class="infoJogo">
+                    <i class="fa-brands fa-steam"></i>
+                    <div class="nomeJogo">
+                        <p>Diablo IV Gold Edition</p>
                     </div>
 
                 </div>
-
-                <!-- Adiciona a paginação (opcional) -->
-                <div class="swiper-pagination"></div>
-
-                <!-- Botões de navegação (opcional) -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-                <!-- Scrollbar (opcional) -->
-
+                <div class="precoJogo">
+                    <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+                </div>
+                <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
             </div>
-            <!-- Fim da estrutura do Swiper -->
-        </div>
 
-        <div class="divisoria2"></div>
-        <div class="divisoria1"></div>
-        <div class="divisoria2"></div>
+            <!--CARD JOGO 2-->
+            <div class="card">
+                <div class="imgJogo">
+                    <img class="img" src="/images/undertale-1024x1024.jpg" alt="sua descrição aqui">
+                </div>
+                <div class="infoJogo">
+                    <i class="fa-brands fa-xbox"></i>
+                    <div class="nomeJogo">
+                        <p>Undertale Xbox</p>
+                    </div>
+
+                </div>
+                <div class="precoJogo">
+                    <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+                </div>
+                <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+            </div>
+
+            <!--CARD JOGO 3-->
+            <div class="card">
+                <div class="imgJogo">
+                    <img class="img" src="/images/watchdogs2.jpg" alt="sua descrição aqui">
+                </div>
+                <div class="infoJogo">
+                    <i class="fa-brands fa-playstation"></i>
+                    <div class="nomeJogo">
+                        <p>Dino T-Rex 3</p>
+                    </div>
+
+                </div>
+                <div class="precoJogo">
+                    <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+                </div>
+                <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+            </div>
+
+            <!--CARD JOGO 4-->
+            <div class="card">
+                <div class="imgJogo">
+                    <img class="img" src="/images/farcry6.jpg" alt="sua descrição aqui">
+                </div>
+                <div class="infoJogo">
+
+                    <i class="fa-brands fa-xbox"></i>
+                    <div class="nomeJogo">
+                        <p>Dino T-Rex 4</p>
+                    </div>
+
+                </div>
+                <div class="precoJogo">
+                    <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+                </div>
+                <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+            </div>
+
+           
+           
+
+        </div>    
+
+
+
+
+        <div class="container2">
+            <!--CARD JOGO 1-->
+            <div class="card">
+               <div class="imgJogo">
+                   <img class="img" src="/images/diablo-4-1024x1024.jpg" alt="sua descrição aqui">
+               </div>
+               <div class="infoJogo">
+                   <i class="fa-brands fa-steam"></i>
+                   <div class="nomeJogo">
+                       <p>Diablo IV Gold Edition</p>
+                   </div>
+
+               </div>
+               <div class="precoJogo">
+                   <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+               </div>
+               <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+           </div>
+
+           <!--CARD JOGO 2-->
+           <div class="card">
+               <div class="imgJogo">
+                   <img class="img" src="/images/undertale-1024x1024.jpg" alt="sua descrição aqui">
+               </div>
+               <div class="infoJogo">
+                   <i class="fa-brands fa-xbox"></i>
+                   <div class="nomeJogo">
+                       <p>Dino T-Rex 2</p>
+                   </div>
+
+               </div>
+               <div class="precoJogo">
+                   <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+               </div>
+               <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+           </div>
+
+           <!--CARD JOGO 3-->
+           <div class="card">
+               <div class="imgJogo">
+                   <img class="img" src="/images/watchdogs2.jpg" alt="sua descrição aqui">
+               </div>
+               <div class="infoJogo">
+                   <i class="fa-brands fa-playstation"></i>
+                   <div class="nomeJogo">
+                       <p>Dino T-Rex 3</p>
+                   </div>
+
+               </div>
+               <div class="precoJogo">
+                   <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+               </div>
+               <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+           </div>
+
+           <!--CARD JOGO 4-->
+           <div class="card">
+               <div class="imgJogo">
+                   <img class="img" src="/images/farcry6.jpg" alt="sua descrição aqui">
+               </div>
+               <div class="infoJogo">
+
+                   <i class="fa-brands fa-xbox"></i>
+                   <div class="nomeJogo">
+                       <p>Dino T-Rex 4</p>
+                   </div>
+
+               </div>
+               <div class="precoJogo">
+                   <p>de <span class="precoAntigo"> R$ 300,00 </span> por R$ 234,99</p>
+               </div>
+               <button class="btnComprar"><i class="fas fa-shopping-cart"></i>Comprar</button>
+           </div>
+
+          
+          
+
+       </div>  
+       
+       
+ </main>
+
+
     </main>
 
     <div id="footer"></div>
 
     <!-- Scripts -->
     <script src="js/modularizar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Inicialização do SwiperJS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var swiper = new Swiper('.swiper', {
-                // Ajuste o espaço entre os slides conforme necessário
-                // Configurações opcionais
-                direction: 'horizontal',
-                loop: false,
-
-
-
-                // Paginação
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    slidesPerView: 3
-                },
-
-                // Botões de navegação
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-
-                // Scrollbar
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-
-                breakpoints: {
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-
-                    1080: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                }
-
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-main {
+/* main {
     margin-left: 10vw;
     margin-right: 10vw;
     margin-top: 50px;
@@ -6,10 +6,10 @@ main {
     display: grid;
     row-gap: 20px;
 
-}
+} */
 
 
-.divisoria1,
+/* .divisoria1,
 .divisoria2 {
     margin-top: 10px;
     height: 40vh;
@@ -19,67 +19,178 @@ main {
     padding-right: 20px;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden; /* Esconde as divs que ultrapassam o tamanho da div pai */
-    white-space: nowrap; /* Impede a quebra das divs para a linha de baixo */
+    overflow: hidden; /*
+   /* white-space: nowrap; /*
 
-}
+} */
 
 
-.divisoria1 {
-    background-color: #FF6AD5;
-    border: 1px solid blue;
-
-}
-
-.divisoria2 {
-    background-color: #C774E8;
-    border: 1px solid whitesmoke;
-}
-
-.card {
-    color: black;
-    border: 2px solid black;
-    max-height: 100%;
-    width: 400px; /* Defina a largura dos cards */
-    height: 350px; /* Defina a altura dos cards */
-    margin: 10px; /* Espaçamento entre os cards */
-    line-height: 300px; /* Centraliza o texto verticalmente  Impede o redimensionamento e mantém o tamanho fixo */
-}
-
-.cardImage{
-    border: 1px solid red;
-    max-width: 100%;
-    height: 60vh;
-    max-height: 70%;
+.container, .container2{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px; 
+    padding: 20px;
+    gap: 50px;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    box-sizing: border-box;
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    background-color: black;
+}
+
+
+
+.container{
+    background-color: red;
 
 
 }
 
-.cardFooter {
-    border: 1px solid black;
-    width: 100%;
-    height: 30%; /* Use porcentagem para consistência com o contêiner pai */
+.container2{
+    background-color: green;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+/* Estiliza o fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+/* Estiliza o botão deslizante (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 10px; 
+    border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card{
     display: flex;
+    flex: 0 0 auto;
     flex-direction: column;
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
-   
+    justify-content: start;
+    align-items: center;
+    background: linear-gradient(135deg, #9b6fd1, #f9b3d1, #ff77d1, #4dd0e1, #a1f9e2);
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    width: 270px;
+    height: 340px;
 }
 
-
-.swiper-slide:first-child {
-    margin-left: 30px; /* Ajuste o valor conforme necessário */
-}
-
-.responsive-image {
-    width: 100%;
-  height: 100%;
-  object-fit: fill; /* ou 'contain', 'fill', 'scale-down' */
-  }
-
-.swiper-slide{
+.imgJogo .img{
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
+    margin: 0px auto;
+    border-radius: 20px;
+    padding: 10px 10px 0px 10px;
+    width: 250px;
+    height: 200px;
 }
+
+.infoJogo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+    
+}
+
+.iconeVoltar{
+    display: flex;
+    max-width: 100%;
+    margin-left: 10px;
+}
+
+.nomeJogo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+.nomeJogo p{
+    margin-top: 11px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.infoJogo .fa-brands ,.fa-solid{
+    margin-top: 19px;
+    margin-left: 13px;
+    font-size: 1.5rem;
+}
+
+.fa-playstation{
+    color:blue
+}
+
+.fa-xbox{
+    color: green;
+}
+
+.fa-steam{
+    color: #455A64;
+}
+
+.precoJogo{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;   
+}
+
+.precoJogo p{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.precoAntigo{
+    margin-left: 5px;
+    margin-right: 5px;
+    text-decoration: line-through;
+}
+
+.btnComprar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 90%;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    background-color: #A79685;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+button .fas{
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.btnComprar:hover{
+    background-color: #F4E3D5;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+
+
