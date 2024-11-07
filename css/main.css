@@ -23,36 +23,40 @@
    /* white-space: nowrap; /*
 
 } */
-
+main{
+    margin-top: 100px;
+    min-height: calc(100vh - 200px); /* Subtraia a altura do footer */
+    padding-bottom: 2rem; /* Adicione um padding para dar espaço ao footer */
+}
 
 .container, .container2{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
-    margin-top: 100px; 
     padding: 20px;
     gap: 50px;
     width: 90%;
     margin: 0 auto;
+    margin-bottom: 50px;
     height: auto;
     box-sizing: border-box;
     overflow-x: auto; 
     scroll-behavior: smooth;
     white-space: nowrap;
-    background-color: black;
 }
 
 
 
 .container{
-    background-color: red;
-
+    background-color: #FF6AD5;
+    border: 1px solid blue;
 
 }
 
 .container2{
-    background-color: green;
+    background-color: #C774E8;
+    border: 1px solid whitesmoke;
 }
 
 ::-webkit-scrollbar {
@@ -127,7 +131,7 @@
 }
 
 .infoJogo .fa-brands ,.fa-solid{
-    margin-top: 19px;
+    margin-top: 10px;
     margin-left: 13px;
     font-size: 1.5rem;
 }
@@ -169,28 +173,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin-top: 15px;
     width: 90%;
     padding: 5px 20px;
     border: none;
     border-radius: 10px;
-    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
-    background-color: #A79685;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px #ff77ff, inset 0 0 20px #00eaff;
+    background: linear-gradient(145deg, #ff77ff, #00eaff);
     color: white;
     font-size: 1.1rem;
     font-weight: 700;
 }
 
-button .fas{
+button .fas{ /*Botao do icon de carrinho */
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .btnComprar:hover{
-    background-color: #F4E3D5;
+ transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 0 20px #ff77ff, inset 0 0 30px #00eaff;
     cursor: pointer;
-    color: black;
-    transition: 0.3s;
 }
 
 

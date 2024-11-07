@@ -4,8 +4,8 @@
 footer{
     width: 100%; /* Certifica-se de que o footer ocupe toda a largura */
     text-align: center;
-    bottom: 0;
     left: 0;
+    z-index: 0;
 }
 
 
