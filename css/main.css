@@ -28,6 +28,7 @@ main{
     flex-direction: column;
     min-height: calc(100vh - 200px); /* Subtraia a altura do footer */
     padding-bottom: 2rem; /* Adicione um padding para dar espaço ao footer */
+    margin-top: 200px;
 }
 
 .container, .container2{

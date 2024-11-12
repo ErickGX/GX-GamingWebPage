@@ -3,6 +3,8 @@
 
 #header {
     margin-bottom: 100px;
+    position: fixed;
+    width: 100%;
 }
 
 .nav-links {
