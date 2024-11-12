@@ -4,17 +4,16 @@
 footer{
     width: 100%; /* Certifica-se de que o footer ocupe toda a largura */
     text-align: center;
-    left: 0;
-    z-index: 0;
+
 }
 
 
 .footer {
     background: rgba(0, 0, 0, 0.8);
     color: #00ffff;
-    padding: 2rem 1rem;
+    padding: 2rem 0px;
     font-family: 'VT323', monospace;
-    bottom: 0;
+    width: 100%;
 }
 
 .footer-content {
@@ -22,6 +21,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 90%;
 }
 
 .footer-logo {

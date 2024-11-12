@@ -1,9 +1,15 @@
-.containerCarrinho{
-display: flex;
-flex-direction: flex;
-width: 200px;
-height: 200px;
-background-color: white;
+#carrinhoDireita {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#containerCarrinho{
+position: fixed;
+flex-direction: row; 
+width: 400px;
+height: 600px;
+background-color: rgb(201, 115, 115);
+margin-top: -100px;
 }
 
 .cartHead{
@@ -13,7 +19,8 @@ background-color: white;
 
 .cartItens{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
