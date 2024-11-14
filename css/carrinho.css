@@ -3,6 +3,16 @@
     justify-content: flex-end;
 }
 
+#carrinhoDireita {
+    visibility: hidden;
+    display: flex;
+    }
+  
+    #carrinhoDireita.visible {
+      visibility: visible;
+      display: flex;
+    }
+
 #containerCarrinho{
 position: fixed;
 flex-direction: row; 
