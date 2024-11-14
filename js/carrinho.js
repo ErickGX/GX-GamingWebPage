@@ -25,7 +25,8 @@ function addProductToCart(event) {
         // Atualiza o carrinho no localStorage com o novo item adicionado
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
         
-        alert("Jogo adicionado ao carrinho!"); // Exibe um alerta informando que o produto foi adicionado
+        alert("Jogo adicionado ao carrinho!");
+        addItem(jogo) // Exibe um alerta informando que o produto foi adicionado
       }
     }
   }
@@ -41,19 +42,65 @@ function addProductToCart(event) {
     // Alterna a classe "visible" na div do carrinho para mostrar/ocultar
     carrinhoDiv.classList.toggle("visible");
 }
-  function toggleCartVisibility() {
-    // Seleciona o ícone do carrinho e a div do carrinho
-    const iconCarrinho = document.querySelector("fa-cart-shopping");
-    const carrinhoDiv = document.getElementById("carrinhoDireita");
 
-    // Adiciona um evento de clique ao ícone do carrinho
-    iconCarrinho.addEventListener("click", () => {
-        carrinhoDiv.classList.toggle("visible");
-    });
+function criarItemCart(grupo) {
+   grupo.forEach((jogo) => {
+      const card = document.createElement("div");
+      card.classList.add("item");
+
+      // Verifica a plataforma e define a classe do ícone correspondente
+    
+      card.innerHTML = `
+      <div class="imagemJogoCart"><img src="/images/diablo-4-1024x1024.jpg" alt="" srcset=""></div>
+      <div class="nomeJogoCart">Diablo IV steam edition</div>
+      <div class="trashIcon"><i class="fa-solid fa-trash"></i></div>
+      `;
+      containeritens.appendChild(item);
+  });
 }
 
+grupo.forEach(criarItemCart);
+
+
+
+
 // Chama a função ao carregar o DOM
-document.addEventListener("DOMContentLoaded", toggleCartVisibility);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function clearCart() {
 //     localStorage.removeItem("carrinho"); // Remove o item "carrinho" do localStorage

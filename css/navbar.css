@@ -2,12 +2,15 @@
 
 
 #header {
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
+    top: 0;
     position: fixed;
     width: 100%;
 }
 
-fa-shopping
+.fa-cart-shopping{
+    cursor: pointer;    
+}
 
 .nav-links {
     display: flex;

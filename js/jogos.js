@@ -17,7 +17,7 @@ const jogos = [
     },
     {
       id: 3,
-      nome: "Dino T-Rex 3",
+      nome: "Watch Dogs 2",
       plataforma: "xbox",
       precoAntigo: "R$ 300,00",
       precoAtual: "R$ 234,99",
@@ -25,7 +25,7 @@ const jogos = [
     },
     {
       id: 4,
-      nome: "Dino T-Rex 4",
+      nome: "FarCry 6 Gold Edition",
       plataforma: "steam",
       precoAntigo: "R$ 300,00",
       precoAtual: "R$ 234,99",
@@ -33,12 +33,12 @@ const jogos = [
     },
     {
         id: 5,
-        nome: "WatchDogs 2",
+        nome: "GTA IV",
         plataforma: "playstation",
         precoAntigo: "R$ 125,00",
         precoAtual: "R$ 100,99",
         imagem: "/images/gta5-1024x1024.avif",
-    },
+    },   
   ];
   
   const jogosAgrupados = jogos.reduce((acc, jogo, index) => {

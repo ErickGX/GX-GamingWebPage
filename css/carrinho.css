@@ -1,34 +1,48 @@
-#carrinhoDireita {
-    display: flex;
+#carrinhoDireita.carrinho {
+    margin-top: 105.3px !important;
+    display: flex; 
     justify-content: flex-end;
+    visibility: hidden;   
 }
 
-#carrinhoDireita {
-    visibility: hidden;
-    display: flex;
-    }
-  
-    #carrinhoDireita.visible {
+
+#carrinhoDireita.visible {
       visibility: visible;
-      display: flex;
-    }
+}
 
 #containerCarrinho{
 position: fixed;
 flex-direction: row; 
-width: 400px;
-height: 600px;
-background-color: rgb(201, 115, 115);
-margin-top: 105px;
+width: 500px;
+height: auto;
+/* margin-top: 105px; */
+/* background: linear-gradient(145deg, #ff77ff, #00eaff); */
+background: white;
+
 }
 .carrinhoHeader{
-    width: 90%;
+    display: flex;
     height: 10%;
+    margin: 5px;
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
+
 .carrinhoFooter{
-    width: 90%;
+    display: flex;
     height: 10%;
+    margin: 5px;
+    font-size: 2.5rem; 
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: red;
+    margin-top: 24rem;
+    bottom: 0;
+
 }
 
 .item {
@@ -43,5 +57,19 @@ margin-top: 105px;
 }
 
 .item img {
-    width: 80px;
+    width: 90px;
+}
+
+.imagemJogoCart{
+    margin-left: 20px;
+}
+
+.nomeJogoCart{
+    margin-left: 25px;
+    font-size: 1.5rem;
+}
+
+.trashIcon{
+    margin-right: 30px;
+    color: red;
 }
