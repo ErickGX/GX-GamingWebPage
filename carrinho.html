@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho Teste</title>
+</head>
+
+<body>
+
+    <h2>Produtos</h2>
+
+    <div class="produtos">
+        <span id="prodGuitarra" data-preco="350.00">Guitarra</span>
+        <button onclick="adcCarrinho('prodGuitarra')">Adicionar ao carrinho</button>
+        <button onclick="removeCarrinho('prodGuitarra')">Tirar do carrinho</button>
+    </div>
+
+    <div class="produtos">
+        <span id="prodTeclado" data-preco="100.00">Teclado</span>
+        <button onclick="adcCarrinho('prodTeclado')">Adicionar ao carrinho</button>
+        <button onclick="removeCarrinho('prodTeclado')">Tirar ao carrinho</button>
+    </div>
+
+    <div class="produtos">
+        <span id="prodBateria" data-preco="23.00">Bateria</span>
+        <button onclick="adcCarrinho('prodBateria')">Adicionar ao carrinho</button>
+        <button onclick="removeCarrinho('prodBateria')">Tirar ao carrinho</button>
+    </div>
+
+    <hr>
+
+    <h2>Carrinho</h2>
+
+    <div>
+        <p id="listaProdutos"></p>
+    </div>
+
+    <p>
+        <button onclick="limparCarrinho()">Limpar carrinho</button>
+    </p>
+
+    <hr>
+
+    <h2>Cadastro</h2>
+
+    <p>
+        <input type="text" name="usuario" id="usuario" placeholder="nome de usuario">
+    </p>
+
+    <p>
+        <input type="password" name="senha" id="senha" placeholder="senha">
+    </p>
+
+    <p>
+        <button type="submit" onclick="cadUsuario('usuario', 'senha')">Cadastrar</button>
+    </p>
+
+    <script>
+        /////////////// CADASTRO
+
+        // cadastrar novo usuario
+        function cadUsuario(u, s) {
+            var u = document.getElementById("usuario").value;
+            var s = document.getElementById("senha").value;
+
+            const login = JSON.parse(localStorage.getItem("login")) || { contas: [] };
+
+            var usuarioJaExiste = false;
+
+            for (let i = 0; i < login.contas.length; i++) {
+                if (login.contas[i].usuario === u) {
+                    usuarioJaExiste = true;
+                    window.alert("O usuário já existe. Faça login.");
+                    break;
+                }
+            }
+
+            if (!usuarioJaExiste) {
+                login.contas.push({ usuario: u, senha: s });
+                localStorage.setItem("login", JSON.stringify(login));
+                window.alert("Cadastro realizado com sucesso!");
+                console.log("Usuário " + u + " cadastrado.");
+            }
+        }
+
+        /////////////// CARRINHO
+
+        // o carrinho carrega sem precisar ser chamado no index
+        // é chamado assim q a página carrega
+        document.addEventListener("DOMContentLoaded", function () {
+            mostrarCarrinho();
+        });
+
+
+        // adiciona ao carrinho
+        function adcCarrinho(produtoId) {
+            var prodNome = document.getElementById(produtoId).innerHTML;
+            var prodPreco = parseFloat(document.getElementById(produtoId).dataset.preco);
+
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || { itens: [] };
+
+            var produtoJaExiste = false;
+
+            for (let i = 0; i < carrinho.itens.length; i++) {
+                if (carrinho.itens[i].nome === prodNome) {
+                    carrinho.itens[i].quantidade += 1;
+                    produtoJaExiste = true;
+                    console.log("Produto " + prodNome + " adicionado ao carrinho");
+                    break;
+                }
+            }
+
+            if (!produtoJaExiste) {
+                carrinho.itens.push({ nome: prodNome, quantidade: 1, prodPreco: prodPreco });
+                console.log("Produto " + prodNome + " adicionado ao carrinho");
+            }
+
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+            JSON.parse(localStorage.getItem("carrinho"));
+
+            mostrarCarrinho();
+        }
+
+        // mostra todos os itens e suas qtds do carrinho
+        function mostrarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem("carrinho")) || { itens: [] };
+            const listaProdutos = document.getElementById("listaProdutos");
+
+            listaProdutos.innerHTML = '';
+
+            if (carrinho.itens.length === 0) {
+                listaProdutos.innerHTML = "<p>O carrinho está vazio</p>";
+            } else {
+                let html = "<ul>";
+                let valorTotal = 0;
+
+                for (let i = 0; i < carrinho.itens.length; i++) {
+                    const item = carrinho.itens[i];
+                    html += `<li>${item.nome}: ${item.quantidade}. Preço unitário: R$ ${item.prodPreco}</li>`;
+                    valorTotal += item.prodPreco * item.quantidade;
+                }
+
+                html += `</ul><p>Valor total: R$ ${valorTotal.toFixed(2)}</p>`;
+
+                listaProdutos.innerHTML = html;
+            }
+        }
+
+        // tirar do carrinho
+        function removeCarrinho(produtoId) {
+            var prodNome = document.getElementById(produtoId).innerHTML;
+            const carrinho = JSON.parse(localStorage.getItem("carrinho"));
+
+            var produtoJaExiste = false;
+
+            if (carrinho.itens.length === 0) {
+                window.alert("O carrinho está vazio.");
+                return;
+            }
+
+            for (let i = 0; i < carrinho.itens.length; i++) {
+                if (carrinho.itens[i].nome === prodNome) {
+
+                    if (carrinho.itens[i].quantidade > 1) {
+                        carrinho.itens[i].quantidade -= 1;
+                        console.log("Produto " + prodNome + " retirado do carrinho");
+                    } else {
+                        carrinho.itens.splice(i, 1); // i é o index do array e 1 é a qtd
+                        console.log("Produto " + prodNome + " retirado do carrinho");
+                    }
+                    produtoJaExiste = true;
+                    break;
+                }
+            }
+
+            if (!produtoJaExiste) {
+                window.alert("Não existe esse item no carrinho.");
+            }
+
+            localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+            mostrarCarrinho();
+        }
+
+        // tira todos os itens do carrinho
+        function limparCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem("carrinho"));
+
+            if (carrinho.itens.length === 0) {
+                window.alert("O carrinho já está vazio. Se manque.");
+            } else {
+                carrinho.itens = [];
+                localStorage.setItem("carrinho", JSON.stringify(carrinho));
+                console.log("Todos os produtos foram retirados do carrinho");
+                mostrarCarrinho();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

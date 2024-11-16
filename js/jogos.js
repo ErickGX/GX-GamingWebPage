@@ -38,15 +38,96 @@ const jogos = [
         precoAntigo: "R$ 125,00",
         precoAtual: "R$ 100,99",
         imagem: "/images/gta5-1024x1024.avif",
-    },   
+    },
+    {
+        id: 6,
+        nome: "Diablo® IV: Vessel of Hatred™",
+        plataforma: "steam",
+        precoAntigo: "R$ 300,00",
+        precoAtual: "R$ 234,99",
+        imagem: "/images/diablo-4-1024x1024.jpg",
+      },
+      {
+        id: 7,
+        nome: "Undertale Xbox",
+        plataforma: "playstation",
+        precoAntigo: "R$ 300,00",
+        precoAtual: "R$ 234,99",
+        imagem: "/images/undertale-1024x1024.jpg",
+      },
+      {
+        id: 8,
+        nome: "Watch Dogs 2",
+        plataforma: "xbox",
+        precoAntigo: "R$ 300,00",
+        precoAtual: "R$ 234,99",
+        imagem: "/images/watchdogs2.jpg",
+      },
+      {
+        id: 9,
+        nome: "FarCry 6 Gold Edition",
+        plataforma: "steam",
+        precoAntigo: "R$ 300,00",
+        precoAtual: "R$ 234,99",
+        imagem: "/images/farcry6.jpg",
+      },
+      {
+          id: 10,
+          nome: "GTA IV",
+          plataforma: "playstation",
+          precoAntigo: "R$ 125,00",
+          precoAtual: "R$ 100,99",
+          imagem: "/images/gta5-1024x1024.avif",
+      },   
   ];
+
   
-  const jogosAgrupados = jogos.reduce((acc, jogo, index) => {
-    if (index % 5 === 0) acc.push([]);
-    acc[acc.length - 1].push(jogo);
-    return acc;
-  }, []);
-  
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const bodyId = document.body.id; // Obtém o ID do body para identificar a página
+    let jogosFiltrados = [];
+
+    // Filtra os jogos com base no ID do body
+    if (bodyId === "inicio") {
+        jogosFiltrados = jogos; // Exibe todos os jogos na página inicial
+    } else if (bodyId === "ofertas") {
+        jogosFiltrados = jogos.filter(jogo => {
+            const precoAtual = parseFloat(jogo.precoAtual.replace("R$", "").replace(",", "."));
+            return precoAtual < 150; // Filtra jogos com preço abaixo de R$ 150
+        });
+    } else {
+        jogosFiltrados = jogos.filter(jogo => jogo.plataforma === bodyId); // Filtra os jogos pela plataforma
+    }
+
+    // Agrupa os jogos filtrados em lotes de 5
+    const jogosAgrupados = jogosFiltrados.reduce((acumulador, jogo, index) => {
+        if (index % 5 === 0) acumulador.push([]);
+        acumulador[acumulador.length - 1].push(jogo);
+        return acumulador;
+    }, []);
+
+    // Renderiza os jogos agrupados
+    jogosAgrupados.forEach(grupo => criarCards(grupo));
+});
+
+
+
+
+
+// const agruparPorPlataforma = jogos.reduce((acumulador, jogo) =>{
+// //funcao para agrupar todos os jogos por plataforma (teste)
+//     const plat = jogo.plataforma;
+//     if (!acumulador[plat]) acumulador[plat] = [];
+//      {
+//         acumulador[plat].push(jogo);
+//         return acumulador;    
+//     }
+
+// }, {});
+
+//console.log(agruparPorPlataforma);
+
+//console.log(jogosAgrupados);
 
   
   function criarCards(grupo) {
@@ -98,6 +179,9 @@ const jogos = [
     });
     document.querySelector("main").appendChild(container);
 }
+
+
+
   
-  jogosAgrupados.forEach(criarCards);
+  //jogosAgrupados.forEach(criarCards);
   

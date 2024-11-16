@@ -19,6 +19,7 @@ height: auto;
 /* background: linear-gradient(145deg, #ff77ff, #00eaff); */
 background: white;
 
+
 }
 .carrinhoHeader{
     display: flex;
@@ -45,7 +46,7 @@ background: white;
 
 }
 
-.item {
+.listaitem {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -56,12 +57,19 @@ background: white;
     border-radius: 30px;
 }
 
-.item img {
+/* .item img {
     width: 90px;
-}
+    heig
+} */
 
 .imagemJogoCart{
     margin-left: 20px;
+}
+
+.imagemJogoCart img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover; /* Para ajustar a imagem ao tamanho definido */
 }
 
 .nomeJogoCart{

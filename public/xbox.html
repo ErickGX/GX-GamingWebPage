@@ -5,7 +5,6 @@
     <title>Homepage</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Importar Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/navbar.css"/>
@@ -15,26 +14,26 @@
 
 </head>
 
-<body>
+<body id="xbox">
+    
     <div id="header"></div>
+
 
     <div id="carrinhoDireita" class="carrinho">
         <div id="containerCarrinho">
             <div class="carrinhoHeader" style="background-color: blue;">
                 <!-- Botão para limpar o carrinho -->
-<!-- <button onclick="clearCart()">Limpar Carrinho</button> -->
+                <p>Carrinho de Compras</p>
+                <i class="fa-solid fa-trash-can" id="clearCart"></i>
             </div>
 
-            <div class="item">
-                <div class="i"><img src="/images/diablo-4-1024x1024.jpg" alt="" srcset=""></div>
-                <div class="i" style="background-color: red;">Diablo IV steam edition</div>
-                <div class="i" style="background-color: blue;"> <i class="fa-brands fa-steam"></i></div>
-            </div>
+            <div class="containeritens">
 
-            <div class="carrinhoFooter" style="background-color: brown;"></div>
+           </div>
+
+            <div class="carrinhoFooter"><p>Total RS$ 3000</p></div>
         </div>
     </div>
-
 
     <main></main>
 
@@ -42,8 +41,10 @@
 
     <!-- Scripts -->
     <script src="../js/modularizar.js"></script>
-    <script src="../js/carrinho.js"></script>
+    <script src="../s/carrinho.js"></script>
     <script src="../js/jogos.js"></script>
+    <script src="../js/main.js"></script>
+
 </body>
 
 </html>

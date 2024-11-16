@@ -25,8 +25,10 @@ function addProductToCart(event) {
         // Atualiza o carrinho no localStorage com o novo item adicionado
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
         
-        alert("Jogo adicionado ao carrinho!");
-        addItem(jogo) // Exibe um alerta informando que o produto foi adicionado
+        alert("Jogo adicionado ao carrinho!"); // Exibe um alerta informando que o produto foi adicionado
+
+        ListaCarrinho();
+ 
       }
     }
   }
@@ -43,28 +45,82 @@ function addProductToCart(event) {
     carrinhoDiv.classList.toggle("visible");
 }
 
-function criarItemCart(grupo) {
-   grupo.forEach((jogo) => {
-      const card = document.createElement("div");
-      card.classList.add("item");
+//funcao para monstrar quantos itens tem no carrinho no localstorage
+const carin =  localStorage.getItem('carrinho')
 
-      // Verifica a plataforma e define a classe do ícone correspondente
-    
-      card.innerHTML = `
-      <div class="imagemJogoCart"><img src="/images/diablo-4-1024x1024.jpg" alt="" srcset=""></div>
-      <div class="nomeJogoCart">Diablo IV steam edition</div>
-      <div class="trashIcon"><i class="fa-solid fa-trash"></i></div>
-      `;
-      containeritens.appendChild(item);
-  });
+if (carin) {
+  const carinJson = JSON.parse(carin);
+  const contador = carinJson.length;
+
+  console.log(`O carrinho possui ${contador} itens`);
+}else{
+  console.log('O carrinho possui não itens');
 }
 
-grupo.forEach(criarItemCart);
+document.addEventListener("DOMContentLoaded", () => {
+  ListaCarrinho(); // Atualiza a lista no carregamento da página
+});
+
+function ListaCarrinho() {
+  const ler = JSON.parse(localStorage.getItem('carrinho')) || []; // Recupera os itens do localStorage
+  const containeritens = document.querySelector('.containeritens'); // Seleciona o contêiner
+
+  if (containeritens) {
+      containeritens.innerHTML = ''; // Limpa o contêiner para evitar duplicação
+
+      ler.forEach((item, index) => {
+          const itemLista = document.createElement("div"); // Cria um elemento para cada item
+          itemLista.classList.add("listaitem"); // Adiciona uma classe ao item
+
+          // Gera o conteúdo HTML do item, incluindo o botão de exclusão com `data-index`
+          itemLista.innerHTML = `
+              <div class="imagemJogoCart">
+                  <img 
+                      src="${item.imagem}" 
+                      alt="Imagem de ${item.nome}" 
+                  />
+              </div>
+              <div class="nomeJogoCart">
+                  ${item.nome}
+              </div>
+              <div class="trashIcon">
+                  <i 
+                      class="fa-solid fa-trash" 
+                      data-index="${index}"> <!-- A posição no array -->
+                  </i>
+              </div>
+          `;
+
+          containeritens.appendChild(itemLista); // Adiciona o item ao contêiner
+      });
+  }
+}
+
+
+document.querySelector('.containeritens').addEventListener('click', (event) => {
+  if (event.target.classList.contains('fa-trash')) {
+      const index = parseInt(event.target.getAttribute('data-index'), 10); // Obtém o índice do item
+      removeItemFromCart(index); // Chama a função de remoção
+  }
+});
+
+function removeItemFromCart(index) {
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; // Recupera o carrinho
+  carrinho.splice(index, 1); // Remove o item pelo índice
+  localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
+  ListaCarrinho(); // Re-renderiza a lista
+}
+
+
+// Evento para limpar o carrinho
+document.querySelector("#clearCart").addEventListener("click", () => {
+    localStorage.removeItem("carrinho"); // Limpa o carrinho do localStorage
+    ListaCarrinho(); // Atualiza a interface para refletir o carrinho vazio
+});
 
 
 
 
-// Chama a função ao carregar o DOM
 
 
 
