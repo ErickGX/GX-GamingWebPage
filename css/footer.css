@@ -4,6 +4,7 @@
 footer{
     width: 100%; /* Certifica-se de que o footer ocupe toda a largura */
     text-align: center;
+    margin-top: auto; /* Isso faz com que o footer fique no fundo da div */
 }
 
 
@@ -12,7 +13,7 @@ footer{
     color: #00ffff;
     padding: 2rem 0px;
     font-family: 'VT323', monospace;
-    width: 100%;
+    
 }
 
 .footer-content {
@@ -61,19 +62,42 @@ footer{
 }
 
 
-
-@media (min-width: 768px) {
+/* Footer para dispositivos pequenos */
+@media (max-width: 768px) {
     .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
     }
 
     .footer-logo {
-        margin-bottom: 0;
+        font-size: 1.5rem; /* Ajuste do tamanho da logo */
     }
 
     .footer-nav {
-        margin-bottom: 0;
+        gap: 1rem; /* Espaço maior entre os links */
+    }
+
+    .footer-nav a {
+        font-size: 1rem; /* Ajuste do tamanho da fonte dos links */
     }
 }
+
+/* Footer para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 1rem; /* Ajusta o padding */
+    }
+
+    .footer-logo {
+        font-size: 1.2rem; /* Reduz o tamanho da logo */
+    }
+
+    .footer-nav a {
+        font-size: 0.9rem; /* Reduz o tamanho dos links */
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem; /* Ajuste da fonte para o copyright */
+    }
+}
+

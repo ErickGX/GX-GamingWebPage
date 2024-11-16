@@ -31,7 +31,7 @@ main{
     margin-top: 105.3px;
 }
 
-.container, .container2{
+.container{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
@@ -56,10 +56,6 @@ main{
 
 }
 
-.container2{
-    background-color: #C774E8;
-    border: 1px solid whitesmoke;
-}
 
 ::-webkit-scrollbar {
     width: 12px; 
@@ -193,9 +189,115 @@ button .fas{ /*Botao do icon de carrinho */
 }
 
 .btnComprar:hover{
- transform: scale(1.05);
+    transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 0 20px #ff77ff, inset 0 0 30px #00eaff;
     cursor: pointer;
 }
 
+
+/* Para telas QHD (2560px de largura) */
+@media (max-width: 2560px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas Full HD (1920px de largura) */
+@media (max-width: 1920px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas HD (1366px de largura) */
+@media (max-width: 1366px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas de 1280px ou menos */
+@media (max-width: 1280px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas de 1024px ou menos (tablets em modo paisagem) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas de 768px ou menos (tablets e dispositivos móveis) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+        overflow-x: auto; /* Habilita rolagem horizontal se necessário */
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas de 600px ou menos (dispositivos móveis pequenos) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+        overflow-x: auto; /* Habilita rolagem horizontal se necessário */
+    }
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+/* Para telas de 480px ou menos (dispositivos móveis muito pequenos) */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        justify-content: space-around;
+        overflow-x: auto; /* Habilita rolagem horizontal se necessário */
+    }
+
+    .card {
+        width: 280px;
+        height: 350px;
+    }
+}
 

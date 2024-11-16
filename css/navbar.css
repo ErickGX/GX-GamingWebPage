@@ -19,6 +19,21 @@
     margin-right: 70px;
 }
 
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 70px;
+}
+
+/* Exibe o ícone do hambúrguer em telas pequenas */
+.hamburguer {
+    display: none; /* Escondido por padrão */
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
 .logo {
     margin-right: 10rem; /* Ajuste a margem conforme necessário */
 }
@@ -29,7 +44,7 @@
 }
 
 
-ul.nav-links {
+ul.nav-menu {
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
@@ -41,7 +56,7 @@ ul.nav-links {
     flex-wrap: wrap;
 }
 
-ul.nav-links li {
+ul.nav-menu li {
     margin: 0 1rem; /* Ajuste a margem conforme necessário */
 }
 
@@ -55,7 +70,7 @@ nav {
     padding: 1rem;
 }
 
-.nav-links>li > a {
+.nav-menu>li > a {
     color: #00ffff;
     text-decoration: none;
     font-size: 1.5rem;
@@ -74,10 +89,34 @@ a:hover {
 }
 
 
+/* Navbar para dispositivos pequenos */
 
-@media (max-width: 600px) {
-    ul {
+@media (max-width: 768px) {
+    /* Esconde os links de navegação padrão */
+    .nav-menu {
+        display: none; /* Esconde o menu inicialmente */
         flex-direction: column;
-        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Exibe o ícone do hambúrguer */
+    .hamburguer {
+        display: block;
+    }
+
+    /* Exibe o menu quando a classe 'active' for adicionada */
+    .nav-menu.active {
+        display: flex; /* Torna o menu visível */
+    }
+
+    /* Estiliza os itens do menu */
+    .nav-menu li {
+        margin: 10px 0;
     }
 }

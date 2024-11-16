@@ -17,3 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrega o conteúdo do arquivo footer.html no elemento com ID "footer"
     loadHTML('footer', '/public/components/footer.html');
 });
+
+
+function hamburger(){
+    navMenu.classList.toggle('active'); // Alterna a classe 'active'
+}

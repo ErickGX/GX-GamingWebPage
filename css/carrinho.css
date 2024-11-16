@@ -1,83 +1,139 @@
 #carrinhoDireita.carrinho {
     margin-top: 105.3px !important;
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
-    visibility: hidden;   
+    visibility: hidden;
 }
-
 
 #carrinhoDireita.visible {
-      visibility: visible;
+    visibility: visible;
 }
 
-#containerCarrinho{
-position: fixed;
-flex-direction: row; 
-width: 500px;
-height: auto;
-/* margin-top: 105px; */
-/* background: linear-gradient(145deg, #ff77ff, #00eaff); */
-background: white;
-
-
-}
-.carrinhoHeader{
+#containerCarrinho {
+    position: fixed;
     display: flex;
-    height: 10%;
+    flex-direction: column; /* Organiza os itens na vertical */
+    width: 20vw;
+    max-height: 80vh;  /* Altura máxima do carrinho (ajuste conforme necessário) */
+    height: 100%; /* Permite que o carrinho ocupe toda a altura disponível até a altura máxima */
+    background-color: white;
+    overflow-y: auto;  /* Habilita o scroll quando o conteúdo ultrapassar o tamanho */
+    text-align: justify;
+    border-radius: 10px; /* Se desejar bordas arredondadas */
+}
+
+.carrinhoHeader {
+    display: flex;
+    height: 50px; /* Definindo uma altura fixa para o cabeçalho */
     margin: 5px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     justify-content: center;
     align-items: center;
     color: white;
+    background-color: blue; /* Adiciona uma cor de fundo */
 }
 
-
-.carrinhoFooter{
+.carrinhoFooter {
     display: flex;
-    height: 10%;
-    margin: 5px;
-    font-size: 2.5rem; 
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
     color: white;
     background-color: red;
-    margin-top: 24rem;
-    bottom: 0;
+    padding: 10px;
+    /* A altura do footer será ajustada conforme necessário */
+    margin-top: auto; /* Isso faz com que o footer fique no fundo da div */
+}
 
+.containeritens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Caso os itens ultrapassem, a rolagem também será ativada aqui */
+    padding: 10px;
 }
 
 .listaitem {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 150px;
     background-color: aqua;
     margin: 10px;
     border-radius: 30px;
+    width: 90%;  /* Ajuste conforme necessário */
+    font-size: 1.6rem;
 }
 
-/* .item img {
-    width: 90px;
-    heig
-} */
-
-.imagemJogoCart{
-    margin-left: 20px;
-}
-
+/* Imagem do jogo */
 .imagemJogoCart img {
     width: 90px;
     height: 90px;
-    object-fit: cover; /* Para ajustar a imagem ao tamanho definido */
+    object-fit: cover; /* Ajusta a imagem para o tamanho do contêiner */
+    margin-left: 10px;
+    border-radius: 20px;
 }
 
-.nomeJogoCart{
-    margin-left: 25px;
-    font-size: 1.5rem;
-}
-
-.trashIcon{
+.trashIcon {
     margin-right: 30px;
+    color: blue;
+}
+
+.lixeiraTudo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
     color: red;
 }
+
+/* Ajustes quando o carrinho estiver vazio */
+#containerCarrinho:empty {
+    height: auto; /* Ajusta a altura conforme o conteúdo, sem scroll */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Carrinho em telas pequenas */
+@media (max-width: 768px) {
+    #carrinhoDireita.carrinho {
+        width: 80vw; /* Ajusta a largura para 80% da tela */
+        margin-top: 80px !important; /* Ajusta o espaço superior para dispositivos móveis */
+    }
+
+    #containerCarrinho {
+        width: 100%; /* Garante que o carrinho ocupe toda a largura disponível */
+        max-height: 60vh; /* Limita a altura do carrinho em telas menores */
+    }
+
+    .carrinhoHeader {
+        font-size: 1.5rem; /* Diminui o tamanho da fonte no cabeçalho */
+    }
+
+    .carrinhoFooter {
+        font-size: 1.2rem; /* Diminui o tamanho da fonte no rodapé */
+    }
+}
+
+/* Carrinho em telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    #carrinhoDireita.carrinho {
+        width: 100vw; /* O carrinho ocupa toda a largura da tela */
+    }
+
+    #containerCarrinho {
+        max-height: 50vh; /* Reduz a altura para dispositivos muito pequenos */
+    }
+
+    .carrinhoHeader {
+        font-size: 1.2rem; /* Ajuste adicional para o tamanho da fonte */
+    }
+
+    .carrinhoFooter {
+        font-size: 1rem; /* Ajuste adicional para o tamanho da fonte */
+    }
+}
+
+

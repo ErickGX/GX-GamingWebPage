@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download de Imagens de Jogos</title>
+</head>
+<body>
+
+    <h1>Download de Imagens de Jogos</h1>
+
+    <div id="jogos-container">
+        <!-- Os botões serão inseridos aqui -->
+    </div>
+
+    <script>
+        // Lista de jogos com nome e URL das imagens
+       
+const jogos =[
+    {
+        "id": 1,
+        "nome": "The Last of Us Part II",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 199,99",
+        "imagem": "images/Hollow Knight.jpg"
+    },
+    {
+        "id": 2,
+        "nome": "Halo Infinite",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 249,00",
+        "precoAtual": "R$ 179,99",
+        "imagem": "https://media.rawg.io/media/games/e1f/e1ffbeb1bac25b19749ad285ca29e158.jpg"
+    },
+    {
+        "id": 3,
+        "nome": "Cyberpunk 2077",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 159,99",
+        "imagem": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+    },
+    {
+        "id": 4,
+        "nome": "Hollow Knight",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 80,00",
+        "precoAtual": "R$ 40,99",
+        "imagem": "images/Hollow Knight.jpg"
+    },
+    {
+        "id": 5,
+        "nome": "Red Dead Redemption 2",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 319,00",
+        "precoAtual": "R$ 209,99",
+        "imagem": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+    },
+    {
+        "id": 6,
+        "nome": "Bloodborne",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 149,00",
+        "precoAtual": "R$ 99,99",
+        "imagem": "https://media.rawg.io/media/games/214/214b29aeff13a0ae6a70fc4426e85991.jpg"
+    },
+    {
+        "id": 7,
+        "nome": "Resident Evil 4 Remake",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 259,00",
+        "precoAtual": "R$ 229,99",
+        "imagem": "https://media.rawg.io/media/games/51a/51a404b9918a0b19fc704a3ca248c69f.jpg"
+    },
+    {
+        "id": 8,
+        "nome": "Cuphead",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 89,00",
+        "precoAtual": "R$ 49,99",
+        "imagem": "https://media.rawg.io/media/games/226/2262cea0b385db6cf399f4be831603b0.jpg"
+    },
+    {
+        "id": 9,
+        "nome": "Stardew Valley",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 49,00",
+        "precoAtual": "R$ 19,99",
+        "imagem": "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg"
+    },
+    {
+        "id": 10,
+        "nome": "Sekiro: Shadows Die Twice",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 249,00",
+        "precoAtual": "R$ 179,99",
+        "imagem": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg"
+    },
+    {
+        "id": 11,
+        "nome": "Assassin's Creed Valhalla",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 199,99",
+        "imagem": "https://media.rawg.io/media/games/934/9346092ae11bf7582c883869468171cc.jpg"
+    },
+    {
+        "id": 12,
+        "nome": "Elden Ring",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 269,99",
+        "imagem": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"
+    },
+    {
+        "id": 13,
+        "nome": "Forza Horizon 5",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 349,00",
+        "precoAtual": "R$ 299,99",
+        "imagem": "https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg"
+    },
+    {
+        "id": 14,
+        "nome": "God of War Ragnarök",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 349,00",
+        "precoAtual": "R$ 299,99",
+        "imagem": "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg"
+    },
+    {
+        "id": 15,
+        "nome": "Control Ultimate Edition",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 129,99",
+        "imagem": "https://media.rawg.io/media/games/a74/a7462cb98ad1ed06f646afd0a5a1454d.jpg"
+    },
+    {
+        "id": 16,
+        "nome": "Alan Wake Remastered",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 149,00",
+        "precoAtual": "R$ 99,99",
+        "imagem": "https://media.rawg.io/media/games/685/685812b147f42b08e94391defa972898.jpg"
+    },
+    {
+        "id": 17,
+        "nome": "The Elder Scrolls V: Skyrim",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 89,99",
+        "imagem": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+    },
+    {
+        "id": 18,
+        "nome": "Fallout 4",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 89,99",
+        "imagem": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"
+    },
+    {
+        "id": 19,
+        "nome": "Dark Souls III",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 129,99",
+        "imagem": "https://media.rawg.io/media/games/da1/da1b267764d77221f07a4386b6548e5a.jpg"
+    },
+    {
+        "id": 20,
+        "nome": "DOOM Eternal",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 149,99",
+        "imagem": "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg"
+    },
+    {
+        "id": 21,
+        "nome": "Hades",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 79,00",
+        "precoAtual": "R$ 39,99",
+        "imagem": "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg"
+    },
+    {
+        "id": 22,
+        "nome": "Detroit: Become Human",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 149,00",
+        "precoAtual": "R$ 99,99",
+        "imagem": "https://media.rawg.io/media/games/951/951572a3dd1e42544bd39a5d5b42d234.jpg"
+    },
+    {
+        "id": 23,
+        "nome": "It Takes Two",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 159,00",
+        "precoAtual": "R$ 109,99",
+        "imagem": "https://media.rawg.io/media/games/d47/d479582ed0a46496ad34f65c7099d7e5.jpg"
+    },
+    {
+        "id": 24,
+        "nome": "The Witcher 3: Wild Hunt",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 99,00",
+        "precoAtual": "R$ 49,99",
+        "imagem": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+    },
+    {
+        "id": 25,
+        "nome": "Horizon Forbidden West",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 349,00",
+        "precoAtual": "R$ 299,99",
+        "imagem": "https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg"
+    },
+    {
+        "id": 26,
+        "nome": "Dead Space Remake",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 279,00",
+        "precoAtual": "R$ 249,99",
+        "imagem": "https://media.rawg.io/media/games/ebd/ebdbb7eb52bd58b0e7fa4538d9757b60.jpg"
+    },
+    {
+        "id": 27,
+        "nome": "Marvel's Spider-Man",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 219,99",
+        "imagem": "https://media.rawg.io/media/games/9aa/9aa42d16d425fa6f179fc9dc2f763647.jpg"
+    },
+    {
+        "id": 28,
+        "nome": "FIFA 23",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 349,00",
+        "precoAtual": "R$ 259,99",
+        "imagem": "https://media.rawg.io/media/screenshots/52a/52ad785b9d1514f100ec89c6d5f22e8c.jpg"
+    },
+    {
+        "id": 29,
+        "nome": "Among Us",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 20,00",
+        "precoAtual": "R$ 10,99",
+        "imagem": "https://media.rawg.io/media/games/e74/e74458058b35e01c1ae3feeb39a3f724.jpg"
+    },
+    {
+        "id": 30,
+        "nome": "Outlast II",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 79,00",
+        "precoAtual": "R$ 39,99",
+        "imagem": "https://media.rawg.io/media/games/880/880f6aa65fe9d786f1a455963df76180.jpg"
+    },
+    {
+        "id": 31,
+        "nome": "Super Mario Odyssey",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 120,00",
+        "precoAtual": "R$ 105,99",
+        "imagem": "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg"
+    },
+    {
+        "id": 32,
+        "nome": "GTA Trilogy",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 179,99",
+        "imagem": "https://media.rawg.io/media/screenshots/c2f/c2f4aa10225d6571d019d5741e2037c1.jpg"
+    },
+    {
+        "id": 33,
+        "nome": "Portal",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 15,00",
+        "precoAtual": "R$ 10,99",
+        "imagem": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg"
+    },
+    {
+        "id": 34,
+        "nome": "Nier Automata",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 159,00",
+        "precoAtual": "R$ 150,99",
+        "imagem": "https://media.rawg.io/media/games/5a4/5a44112251d70a25291cc33757220fce.jpg"
+    },
+    {
+        "id": 35,
+        "nome": "Silent Hill",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 140,00",
+        "precoAtual": "R$ 109,99",
+        "imagem": "https://media.rawg.io/media/games/15d/15db2360d1130ba8c10573586588b0bd.jpg"
+    },
+    {
+        "id": 36,
+        "nome": "Hollow Knight: Silksong",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 80,00",
+        "precoAtual": "R$ 70,99",
+        "imagem": "https://media.rawg.io/media/games/27c/27cd8b7dead05a870f8a514a9a1915ad.jpg"
+    },
+    {
+        "id": 37,
+        "nome": "Half-Life 2",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 25,00",
+        "precoAtual": "R$ 15,99",
+        "imagem": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"
+    },
+    {
+        "id": 38,
+        "nome": "Overwatch 2",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 150,00",
+        "precoAtual": "R$ 100,99",
+        "imagem": "https://media.rawg.io/media/games/95a/95a10817d1fc648cff1153f3fa8ef6c5.jpg"
+    },
+    {
+        "id": 39,
+        "nome": "The Legend of Zelda: Breath of the Wild",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 200,00",
+        "precoAtual": "R$ 180,99",
+        "imagem": "https://media.rawg.io/media/games/cc1/cc196a5ad763955d6532cdba236f730c.jpg"
+    },
+    {
+        "id": 40,
+        "nome": "Street Fighter V",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 110,00",
+        "precoAtual": "R$ 89,99",
+        "imagem": "https://media.rawg.io/media/games/a32/a32c9c299488ca99afc3fcea605a7718.jpg"
+    },
+    {
+        "id": 41,
+        "nome": "Terraria",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 50,00",
+        "precoAtual": "R$ 30,99",
+        "imagem": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+    },
+    {
+        "id": 42,
+        "nome": "The Sims 4",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 159,00",
+        "precoAtual": "R$ 129,99",
+        "imagem": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg"
+    },
+    {
+        "id": 43,
+        "nome": "Battlefield 2042",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 259,00",
+        "precoAtual": "R$ 209,99",
+        "imagem": "https://media.rawg.io/media/games/af2/af2b640fa820e8a8135948a4cd399539.jpg"
+    },
+    {
+        "id": 44,
+        "nome": "Metal Gear Solid V",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 129,99",
+        "imagem": "https://media.rawg.io/media/games/bbc/bbce6f1659d35ffc16aed8b66e9990a1.jpg"
+    },
+    {
+        "id": 45,
+        "nome": "Celeste",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 50,00",
+        "precoAtual": "R$ 29,99",
+        "imagem": "https://media.rawg.io/media/games/594/59487800889ebac294c7c2c070d02356.jpg"
+    },
+    {
+        "id": 46,
+        "nome": "Ori and the Will of the Wisps",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 89,00",
+        "precoAtual": "R$ 49,99",
+        "imagem": "https://media.rawg.io/media/games/718/71891d2484a592d871e91dc826707e1c.jpg"
+    },
+    {
+        "id": 47,
+        "nome": "Minecraft",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 149,00",
+        "precoAtual": "R$ 109,99",
+        "imagem": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
+    },
+    {
+        "id": 48,
+        "nome": "Valorant",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 100,00",
+        "precoAtual": "R$ 70,99",
+        "imagem": "https://media.rawg.io/media/games/b11/b11127b9ee3c3701bd15b9af3286d20e.jpg"
+    },
+    {
+        "id": 49,
+        "nome": "Super Smash Bros. Ultimate",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 259,99",
+        "imagem": "https://media.rawg.io/media/games/9f3/9f3c513b301d8d7250a64dd7e73c62df.jpg"
+    },
+    {
+        "id": 50,
+        "nome": "Dead by Daylight",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 79,00",
+        "precoAtual": "R$ 49,99",
+        "imagem": "https://media.rawg.io/media/games/e11/e11325e2f89151d31f612e38dee3b6a0.jpg"
+    },
+    {
+        "id": 51,
+        "nome": "League of Legends",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 0,00",
+        "precoAtual": "R$ 0,00",
+        "imagem": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
+    },
+    {
+        "id": 52,
+        "nome": "Valorant",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 49,00",
+        "precoAtual": "R$ 25,99",
+        "imagem": "https://media.rawg.io/media/games/b11/b11127b9ee3c3701bd15b9af3286d20e.jpg"
+    },
+    {
+        "id": 53,
+        "nome": "Gears of War 4",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 159,00",
+        "precoAtual": "R$ 129,99",
+        "imagem": "https://media.rawg.io/media/games/079/079175933a50b2bf202edd6aa17be19c.jpg"
+    },
+    {
+        "id": 54,
+        "nome": "Final Fantasy VII Remake",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 299,00",
+        "precoAtual": "R$ 249,99",
+        "imagem": "https://media.rawg.io/media/games/d89/d89bd0cf4fcdc10820892980cbba0f49.jpg"
+    },
+    {
+        "id": 55,
+        "nome": "Just Cause 4",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 179,00",
+        "precoAtual": "R$ 149,99",
+        "imagem": "https://media.rawg.io/media/games/02a/02a7f96f5a1156642bc0f827fd1b63f0.jpg"
+    },
+    {
+        "id": 56,
+        "nome": "Left 4 Dead 2",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 30,00",
+        "precoAtual": "R$ 19,99",
+        "imagem": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"
+    },
+    {
+        "id": 57,
+        "nome": "Frostpunk",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 90,00",
+        "precoAtual": "R$ 59,99",
+        "imagem": "https://media.rawg.io/media/games/a88/a886c37bf112d009e318b106db9d420a.jpg"
+    },
+    {
+        "id": 58,
+        "nome": "Nioh 2",
+        "plataforma": "playstation",
+        "precoAntigo": "R$ 249,00",
+        "precoAtual": "R$ 199,99",
+        "imagem": "https://media.rawg.io/media/games/a35/a359074cde22a4b23c54db44a592dc41.jpg"
+    },
+    {
+        "id": 59,
+        "nome": "Hitman 3",
+        "plataforma": "xbox",
+        "precoAntigo": "R$ 269,00",
+        "precoAtual": "R$ 229,99",
+        "imagem": "https://media.rawg.io/media/games/126/126fbd5ceacddc6ad16fc96e50b1265b.jpg"
+    },
+    {
+        "id": 60,
+        "nome": "Mass Effect Legendary Edition",
+        "plataforma": "steam",
+        "precoAntigo": "R$ 199,00",
+        "precoAtual": "R$ 149,99",
+        "imagem": "https://media.rawg.io/media/games/64e/64e2a77f37ddc48d102127234af99886.jpg"
+    }
+];
+
+        const jogosContainer = document.getElementById('jogos-container');
+
+        jogos.forEach(jogo => {
+            // Criação do botão de download
+            const jogoDiv = document.createElement('div');
+            jogoDiv.style.marginBottom = '20px';
+
+            const jogoNome = document.createElement('h2');
+            jogoNome.textContent = jogo.nome;
+            jogoDiv.appendChild(jogoNome);
+
+            const jogoImagem = document.createElement('img');
+            jogoImagem.src = jogo.imagem;
+            jogoImagem.alt = jogo.nome;
+            jogoImagem.style.width = '200px';
+            jogoDiv.appendChild(jogoImagem);
+
+            // Criar o botão de download
+            const downloadButton = document.createElement('a');
+            downloadButton.href = jogo.imagem;
+            downloadButton.download = `${jogo.nome}.jpg`; // Nome do arquivo a ser salvo
+            downloadButton.textContent = 'Baixar Imagem';
+            downloadButton.style.display = 'inline-block';
+            downloadButton.style.marginTop = '10px';
+            downloadButton.style.padding = '10px 20px';
+            downloadButton.style.backgroundColor = '#4CAF50';
+            downloadButton.style.color = 'white';
+            downloadButton.style.textDecoration = 'none';
+            downloadButton.style.borderRadius = '5px';
+
+            jogoDiv.appendChild(downloadButton);
+            jogosContainer.appendChild(jogoDiv);
+        });
+    </script>
+
+</body>
+</html>
