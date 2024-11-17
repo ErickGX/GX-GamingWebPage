@@ -4,12 +4,19 @@
 #header {
     /* margin-bottom: 100px; */
     top: 0;
+    width: 100%;
+   
+}
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
-
 .fa-cart-shopping{
-    cursor: pointer;    
+    cursor: pointer;
+    color: green;    
 }
 
 .nav-links {
@@ -17,6 +24,7 @@
     justify-content: space-between;
     align-items: center;
     margin-right: 70px;
+    position: sticky;
 }
 
 .nav-menu {
@@ -65,10 +73,7 @@ li {
     margin: 0.5rem;
 }
 
-nav {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-}
+
 
 .nav-menu>li > a {
     color: #00ffff;
@@ -87,6 +92,20 @@ a:hover {
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
     box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
 }
+
+#item-count {
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    min-width: 20px;
+    text-align: center;
+}
+
+
 
 
 /* Navbar para dispositivos pequenos */

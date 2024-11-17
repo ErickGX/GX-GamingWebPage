@@ -12,7 +12,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'VT323', monospace;
-    background: linear-gradient(to right, #ff6ad5, #c774e8, #ad8cff);
+    background: linear-gradient(80deg, #ff6ad5, #c774e8, #ad8cff, #7aecec);
+    animation: gradientBG 12s ease infinite;        
+    
 }
 
 
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

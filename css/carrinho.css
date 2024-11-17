@@ -1,5 +1,4 @@
 #carrinhoDireita.carrinho {
-    margin-top: 105.3px !important;
     display: flex;
     justify-content: flex-end;
     visibility: hidden;
@@ -14,32 +13,32 @@
     display: flex;
     flex-direction: column; /* Organiza os itens na vertical */
     width: 20vw;
-    max-height: 80vh;  /* Altura máxima do carrinho (ajuste conforme necessário) */
-    height: 100%; /* Permite que o carrinho ocupe toda a altura disponível até a altura máxima */
-    background-color: white;
+    max-height: 40vh;  /* Altura máxima do carrinho (ajuste conforme necessário) */
+    /* height: 100%; Permite que o carrinho ocupe toda a altura disponível até a altura máxima */
+    background-color: rgba(28, 49, 184, 0.902);
     overflow-y: auto;  /* Habilita o scroll quando o conteúdo ultrapassar o tamanho */
     text-align: justify;
     border-radius: 10px; /* Se desejar bordas arredondadas */
+    margin-top: 105.3px;  /* da espaçamento do tamanho da altura do menu nav */
 }
 
 .carrinhoHeader {
     display: flex;
-    height: 50px; /* Definindo uma altura fixa para o cabeçalho */
-    margin: 5px;
+    height: 60px; /* Definindo uma altura fixa para o cabeçalho */
     font-size: 2rem;
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: blue; /* Adiciona uma cor de fundo */
+    background: linear-gradient(to right, #00ffff, #0080ff);
 }
 
 .carrinhoFooter {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
-    background-color: red;
+    background: linear-gradient(to right, #7209b7, #f72585);
     padding: 10px;
     /* A altura do footer será ajustada conforme necessário */
     margin-top: auto; /* Isso faz com que o footer fique no fundo da div */
@@ -53,13 +52,19 @@
     padding: 10px;
 }
 
+.listaitem:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .listaitem {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 150px;
-    background-color: aqua;
+    background-color: rgb(145, 223, 237); /* Pastel blue for each item */
     margin: 10px;
     border-radius: 30px;
     width: 90%;  /* Ajuste conforme necessário */
@@ -71,7 +76,7 @@
     width: 90px;
     height: 90px;
     object-fit: cover; /* Ajusta a imagem para o tamanho do contêiner */
-    margin-left: 10px;
+    margin: 10px;
     border-radius: 20px;
 }
 
@@ -87,14 +92,7 @@
     color: red;
 }
 
-/* Ajustes quando o carrinho estiver vazio */
-#containerCarrinho:empty {
-    height: auto; /* Ajusta a altura conforme o conteúdo, sem scroll */
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
+
 
 /* Carrinho em telas pequenas */
 @media (max-width: 768px) {

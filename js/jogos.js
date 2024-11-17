@@ -35,8 +35,8 @@ const jogos = [
     { id: 34, nome: "Nier Automata", plataforma: "steam", precoAntigo: "R$ 159,00", precoAtual: "R$ 150,99", imagem: "images/Nier Automata.jpg" },
     { id: 35, nome: "Silent Hill", plataforma: "xbox", precoAntigo: "R$ 140,00", precoAtual: "R$ 109,99", imagem: "images/Silent Hill.jpg" },
     { id: 36, nome: "Hollow Knight: Silksong", plataforma: "steam", precoAntigo: "R$ 80,00", precoAtual: "R$ 70,99", imagem: "images/Hollow Knight Silksong.jpg" },
-    { id: 37, nome: "Half-Life 2", plataforma: "steam", precoAntigo: "R$ 25,00", precoAtual: "R$ 15,99", imagem: "images/Half-Life 2.jpg" }, 
-    { id: 38, nome: "Overwatch 2", plataforma: "xbox", precoAntigo: "R$ 25,00", precoAtual: "R$ 15,99", imagem: "images/Overwatch 2.jpg"},
+    { id: 37, nome: "Half-Life 2", plataforma: "steam", precoAntigo: "R$ 25,00", precoAtual: "R$ 15,99", imagem: "images/Half-Life 2.jpg" },
+    { id: 38, nome: "Overwatch 2", plataforma: "xbox", precoAntigo: "R$ 25,00", precoAtual: "R$ 15,99", imagem: "images/Overwatch 2.jpg" },
     { id: 39, nome: "The Legend of Zelda: BOW", plataforma: "steam", precoAntigo: "R$ 200,00", precoAtual: "R$ 180,99", imagem: "images/The Legend of Zelda Breath of the Wild.jpg" },
     { id: 40, nome: "Street Fighter V", plataforma: "playstation", precoAntigo: "R$ 110,00", precoAtual: "R$ 89,99", imagem: "images/Street Fighter V.jpg" },
     { id: 41, nome: "Terraria", plataforma: "steam", precoAntigo: "R$ 50,00", precoAtual: "R$ 30,99", imagem: "images/Terraria.jpg" },
@@ -61,9 +61,9 @@ const jogos = [
     { id: 60, nome: "Mass Effect Legendary Edition", plataforma: "steam", precoAntigo: "R$ 199,00", precoAtual: "R$ 149,99", imagem: "images/Mass Effect Legendary Edition.jpg" }
 ];
 
-  
 
-  document.addEventListener("DOMContentLoaded", () => {
+
+document.addEventListener("DOMContentLoaded", () => {
     const bodyId = document.body.id; // Obtém o ID do body para identificar a página
     let jogosFiltrados = [];
 
@@ -76,18 +76,23 @@ const jogos = [
             return precoAtual < 150; // Filtra jogos com preço abaixo de R$ 150
         });
     } else {
-        jogosFiltrados = jogos.filter(jogo => jogo.plataforma === bodyId); // Filtra os jogos pela plataforma
+        jogosFiltrados = jogos.filter(jogo => jogo.plataforma === bodyId); // // Filtra os jogos pela plataforma correspondente ao ID do body
     }
 
-    // Agrupa os jogos filtrados em lotes de 5
+    // Aqui eu agrupo os meus jogos em grupo de 5 JOGOS atravez do indices multiplos de 5 usando REDIUCE
     const jogosAgrupados = jogosFiltrados.reduce((acumulador, jogo, index) => {
+        //se o indice for um multiplo de 5 (5,10,15,20..) , eu crio sub grupos com 5 objetos cada
+         //usando o meu acumulador sempre que um indice for multiplo de 5 eu crio um subarray acumulador.push([]) cria um subarray dentro do acumulador
         if (index % 5 === 0) acumulador.push([]);
+        //usando o meu acumulador sempre que um indice for multiplo de 5 eu crio um subarray e adiciono os jogos anteriores dentro dele (index 5 cria subarray e recebe os itens 0,1,2,3,4)
         acumulador[acumulador.length - 1].push(jogo);
+        //no final eu retorno meu accumulador contendo os subgrupos de 5 objetos 
         return acumulador;
     }, []);
-
-    // Renderiza os jogos agrupados
+    
+     // Renderiza os jogos agrupados criando os cards para cada grupo de 5 jogos
     jogosAgrupados.forEach(grupo => criarCards(grupo));
+     // Para cada grupo em jogosAgrupados, cria os cards baseados nos itens contidos em cada grupo de 5 jogos
 });
 
 
@@ -109,12 +114,18 @@ const jogos = [
 
 //console.log(jogosAgrupados);
 
-  
-  function criarCards(grupo) {
+
+function criarCards(grupo) {
+    //crio a div qua vai conter meus card em grupo de 5
     const container = document.createElement("div");
+     // Adiciono a classe 'container' à div criada
     container.classList.add("container");
+
+    // Para cada jogo dentro do grupo de 5 jogos
     grupo.forEach((jogo) => {
+        //eu crio uma div para cada card do meu grupo
         const card = document.createElement("div");
+        //atribuo a classe card para cada div de CARD UNICO dentro do container
         card.classList.add("card");
 
         // Verifica a plataforma e define a classe do ícone correspondente
@@ -134,6 +145,8 @@ const jogos = [
                 break;
         }
 
+        // Crio a estrutura do card com os atributos vindos do objeto 'jogo'
+        // Cada jogo é tratado individualmente em cada iteração
         card.innerHTML = `
             <div class="imgJogo">
                 <img
@@ -155,12 +168,16 @@ const jogos = [
                 <i class="fas fa-shopping-cart"></i> Comprar
             </button>
         `;
+        //Anexo meu filho CARD NO PAI CONTAINER A CADA ITERACAO
         container.appendChild(card);
+         
     });
+    // No final de cada iteração de grupo de 5 cards, anexo o container de cards no elemento pai : 'main'
     document.querySelector("main").appendChild(container);
+
 }
+ console.log(jogos)
 
 
-  
-  //jogosAgrupados.forEach(criarCards);
-  
+//jogosAgrupados.forEach(criarCards);
+

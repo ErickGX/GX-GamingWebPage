@@ -28,7 +28,7 @@ main{
     flex-direction: column;
     /*min-height: calc(100vh - 200px); */ /*  Subtraia a altura do footer */
     padding-bottom: 2rem; /* Adicione um padding para dar espaço ao footer */
-    margin-top: 105.3px;
+    margin-top: 205.3px !important; /* alltura do menu NAV 105.3px , adiciono mais 100px para dar espaço do menu da pagina */
 }
 
 .container{
@@ -51,8 +51,10 @@ main{
 
 
 .container{
-    background-color: #FF6AD5;
-    border: 1px solid blue;
+    background: linear-gradient(135deg, #FF6AD5, #C774E8);
+    border: 2px solid #4ADEDE;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(202, 228, 255, 0.5);
 
 }
 
@@ -91,6 +93,20 @@ main{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
     width: 270px;
     height: 340px;
+}
+
+/* Efeito hover */
+.card:hover {
+    transform: scale(1.07); /* Aumenta o tamanho do card */
+    box-shadow: 20px 10px 10px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+    opacity: 0.9; /* Diminui um pouco a opacidade para dar destaque */
+}
+
+/* Opcional: Adicionar um efeito de transição de cor no texto do nome do jogo */
+.card:hover .nomeJogo p {
+    color: #1c4db8; /* Muda a cor do texto para dar destaque */
+    transition: color 0.3s ease;
+    font-size: 1.3rem ;
 }
 
 .imgJogo .img{

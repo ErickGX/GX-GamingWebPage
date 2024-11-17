@@ -13,7 +13,7 @@ function loadHTML(elementId, filePath) {
 // Adiciona um ouvinte de evento que dispara quando o DOM está completamente carregado
 document.addEventListener('DOMContentLoaded', () => {
     // Carrega o conteúdo do arquivo headernav.html no elemento com ID "header"
-    loadHTML('header', '/public/components/headernav.html');
+   // loadHTML('header', '/public/components/headernav.html');
     // Carrega o conteúdo do arquivo footer.html no elemento com ID "footer"
     loadHTML('footer', '/public/components/footer.html');
 });

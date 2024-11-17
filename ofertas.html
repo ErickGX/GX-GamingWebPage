@@ -13,7 +13,34 @@
     <title>Ofertas de jogos</title>
 </head>
 <body id="ofertas">
-    <div id="header"></div>
+    <header>
+        <nav>  
+            <div class="nav-links">
+                
+                <div class="logo">
+                    <img src="/images/GXLogo.jpg" alt="Logo GX">
+                </div>
+    
+                <!-- Ícone do menu hambúrguer -->
+            <div class="hamburguer" onclick="hamburger()">
+                <i class="fas fa-bars"></i> <!-- Ícone do hambúrguer -->
+            </div>   
+                <ul class="nav-menu">
+                   
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/ofertas.html">Ofertas</a></li>
+                    <li><a href="/xbox.html">Xbox</a></li>
+                    <li><a href="/psn.html">PSN</a></li>
+                    <li><a href="/PC.html">Steam</a></li>
+                    <li>
+                        <i class="fa-solid fa-cart-shopping vaporwave-icon" onclick="toggleCartVisibility()"></i>
+                        <span id="item-count" class="cart-count" style="font-size: 1.5rem;">0</span> <!-- Contador de itens -->
+                    </li>
+                </ul>
+            </div>     
+        </nav>
+      </header>
+
 
     <div id="carrinhoDireita" class="carrinho">
         <div id="containerCarrinho">
@@ -22,7 +49,10 @@
 <!-- <button onclick="clearCart()">Limpar Carrinho</button> -->
 
                 <p>Carrinho de Compras</p>
-                <i class="fa-solid fa-trash-can" id="clearCart"></i>
+                <div class="lixeiraTudo">
+                    <i class="fa-solid fa-trash-can" id="clearCart"></i>
+                </div>
+                
             </div>
 
             <div class="containeritens">
@@ -31,7 +61,10 @@
 
            </div>
 
-            <div class="carrinhoFooter"><p>Total RS$ 3000</p></div>
+            <div class="carrinhoFooter">
+                <p>Total : <span id="total-preco" class="total-cart" style="font-size: 2rem;">$0.00</span></p>                
+            </div>
+            
         </div>
     </div>
 
