@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff6ad5, #c774e8, #ad8cff, #7aecec);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #00ffff;
+    border-radius: 15px;
+    padding: 40px;
+    width: 300px;
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff, 0 0 40px #ff00ff;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #ff00ff, 0 0 35px #00ffff, 0 0 45px #ff00ff;
+}
+
+h1 {
+    text-align: center;
+    color: #00ffff;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px #ff00ff;
+    animation: neonFlicker 1.5s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 3px 3px #ff00ff, 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #ff00ff;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ff00ff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+button {
+    padding: 10px;
+    background-color: #ff00ff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: #00ffff;
+    color: #000000;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+button:hover::before {
+    left: 100%;
+    top: 100%;
+}
+
+.error {
+    color: #ff00ff;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-5px, 5px) }
+    40% { transform: translate(-5px, -5px) }
+    60% { transform: translate(5px, 5px) }
+    80% { transform: translate(5px, -5px) }
+    100% { transform: translate(0) }
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password a {
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
