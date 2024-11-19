@@ -1,0 +1,54 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff6ad5, #c774e8, #ad8cff, #7aecec);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    font-size: 2.5em;
+    text-shadow: 3px 3px #ff00ff;
+    animation: neonFlicker 1.5s infinite alternate;
+}
+.titulo{
+    top: 0;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 3px 3px #e60ce6, 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+.container{
+    border-top:3px  solid black;
+    border-bottom:3px  solid black;
+    border-right:3px  solid black;
+    border-left:3px  solid black;
+    width: 90vw;
+    height: 90vh;
+}
