@@ -44,3 +44,7 @@
             const errorDisplay = document.getElementById(input.name + 'Error');
             errorDisplay.textContent = '';
         }
+
+        function LoginUser(username , password){
+            
+        }

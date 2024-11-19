@@ -1,61 +1,69 @@
+
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-body {
+body{
     font-family: 'VT323', monospace;
-    margin: 0;
-    padding: 0;
     background: linear-gradient(45deg, #ff6ad5, #c774e8, #ad8cff, #7aecec);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    color: #ffffff;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    animation: FundoGradiente 7s ease infinite;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;          
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes FundoGradiente {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
 }
 
-.container {
+.container{
     background-color: rgba(0, 0, 0, 0.7);
     border: 3px solid #00ffff;
     border-radius: 15px;
     padding: 40px;
     width: 300px;
-    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff, 0 0 40px #ff00ff;
+    animation: PiscaPisca 1.5s infinite alternate;
 }
 
-h1 {
+img{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;                
+}
+
+h1{
     text-align: center;
     color: #00ffff;
     font-size: 2.5em;
-    margin-bottom: 20px;
     text-shadow: 3px 3px #ff00ff;
+    /* animation: PiscaPisca 1.5s infinite alternate; */
+    margin-bottom: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+@keyframes PiscaPisca {
+    0%, 15%, 25%, 35%, 55%, 75%, 100% {
+        box-shadow: 3px 3px #ff00ff, 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+    }
+    20%, 30%, 60% {
+        box-shadow: none;
+    }
 }
 
-label {
-    margin-bottom: 5px;
-    color: #ff00ff;
-}
-
-input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #ff00ff;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    font-family: 'VT323', monospace;
+input{
     font-size: 1em;
+    color: #ffffff;
+    padding: 10px;
+    border: 2px solid #ff00ff;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    font-family: 'VT323', monospace;
 }
 
 input:focus {
@@ -64,21 +72,48 @@ input:focus {
     box-shadow: 0 0 10px #00ffff;
 }
 
-button {
-    padding: 10px;
-    background-color: #ff00ff;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
+label{
+    margin-bottom: 5px;
+    color: #ff00ff;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
     font-family: 'VT323', monospace;
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    padding: 9px;
+    background-color: #ff00ff;
+    overflow: hidden;
+}
+
+button:hover{
+    text-transform: uppercase;
+    background-color: #00ffff;
+    color: black;
+    text-transform:uppercase;
+    box-shadow: 0 0 15px #00ffff;
+}
+.voltar {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.voltar a {
+    color: #00ffff;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #00ffff;
-    color: #000000;
-    box-shadow: 0 0 15px #00ffff;
+.voltar a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
 }
 
 .error {
@@ -100,3 +135,4 @@ button:hover {
 .glitch {
     animation: glitch 0.3s infinite;
 }
+  

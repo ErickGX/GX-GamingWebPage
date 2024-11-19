@@ -61,7 +61,8 @@ const jogos = [
     { id: 60, nome: "Mass Effect Legendary Edition", plataforma: "steam", precoAntigo: "R$ 199,00", precoAtual: "R$ 149,99", imagem: "images/Mass Effect Legendary Edition.jpg" }
 ];
 
-
+//Visualizar lista de jogos no console debug
+//console.log(jogos);
 
 document.addEventListener("DOMContentLoaded", () => {
     const bodyId = document.body.id; // Obtém o ID do body para identificar a página
@@ -91,28 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, []);
     
      // Renderiza os jogos agrupados criando os cards para cada grupo de 5 jogos
-    jogosAgrupados.forEach(grupo => criarCards(grupo));
      // Para cada grupo em jogosAgrupados, cria os cards baseados nos itens contidos em cada grupo de 5 jogos
+    jogosAgrupados.forEach(grupo => criarCards(grupo));
+
+    //Funcao de Debug para visualizar os grupos
+    jogosAgrupados.forEach(grupo =>console.log(grupo))
+     
 });
 
 
-
-
-
-// const agruparPorPlataforma = jogos.reduce((acumulador, jogo) =>{
-// //funcao para agrupar todos os jogos por plataforma (teste)
-//     const plat = jogo.plataforma;
-//     if (!acumulador[plat]) acumulador[plat] = [];
-//      {
-//         acumulador[plat].push(jogo);
-//         return acumulador;    
-//     }
-
-// }, {});
-
-//console.log(agruparPorPlataforma);
-
-//console.log(jogosAgrupados);
+ //console.log(jogos)
 
 
 function criarCards(grupo) {
@@ -176,8 +165,8 @@ function criarCards(grupo) {
     document.querySelector("main").appendChild(container);
 
 }
- console.log(jogos)
 
 
-//jogosAgrupados.forEach(criarCards);
+
+
 
