@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function hamburger(){
+function hamburger() {
+    const navMenu = document.querySelector('.nav-menu'); // Seleciona o menu
     navMenu.classList.toggle('active'); // Alterna a classe 'active'
 }
