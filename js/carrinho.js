@@ -36,7 +36,7 @@ function addProductToCart(event) {
   
 document.addEventListener("click", addProductToCart);
 
-function toggleCartVisibility() {
+function VisibilidadeCarrinho() {
     // Seleciona a div do carrinho usando o ID "carrinhoDireita"
     const carrinhoDiv = document.getElementById("carrinhoDireita");
 
@@ -114,11 +114,11 @@ function ListaCarrinho() {
 document.querySelector('.containeritens').addEventListener('click', (event) => {
   if (event.target.classList.contains('fa-trash')) {
       const index = parseInt(event.target.getAttribute('data-index')); // Obtém o índice do item
-      removeItemFromCart(index); // Chama a função de remoção
+      removerItemDoCarrinho(index); // Chama a função de remoção
   }
 });
 
-function removeItemFromCart(index) {
+function removerItemDoCarrinho(index) {
   const carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; // Recupera o carrinho
   carrinho.splice(index, 1); // Remove o item pelo índice
   localStorage.setItem('carrinho', JSON.stringify(carrinho)); // Atualiza o localStorage
@@ -171,6 +171,8 @@ function calcularTotal() {
       return 0; // Retorna 0 caso o total não seja válido
   }
 }
+
+
 
 // Função para atualizar o total do carrinho na interface
 function atualizarTotal() {

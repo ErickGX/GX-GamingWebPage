@@ -5,37 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
     <title>GX-Gaming - Registro</title>
-  
 </head>
 <body>
     <div class="container">
-        <img src="images/GXLogo.jpg" alt="logo">
-        <h1>Gx-Gaming</h1>
+        <img src="images/GXLogo.jpg" alt="Logo GX-Gaming">
+        <h1>GX-Gaming</h1>
         <form id="registerForm">
+            <!-- Campo para Nome de Usuário -->
             <label for="username">Nome de Usuário:</label>
             <input type="text" id="username" name="username" required>
             <div id="usernameError" class="error"></div>
 
+            <!-- Campo para E-mail -->
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" required>
             <div id="emailError" class="error"></div>
 
+            <!-- Campo para Senha -->
             <label for="password">Senha:</label>
             <input type="password" id="password" name="password" required>
             <div id="passwordError" class="error"></div>
 
+            <!-- Campo para Confirmar Senha -->
             <label for="confirmPassword">Confirme a Senha:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" required>
             <div id="confirmPasswordError" class="error"></div>
 
+            <!-- Botão de Registro -->
             <button type="submit">Registrar</button>
+            
+            <!-- Link para voltar -->
             <div class="voltar">
                 <a href="index.html">Fechar</a>
             </div>
         </form>
     </div>
-
-    
+    <script src="js/cadastro.js"></script>
 </body>
-<script src="js/cadastro.js"></script>
 </html>
