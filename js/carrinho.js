@@ -5,7 +5,7 @@ function addProductToCart(event) {
       // Pega o ID do produto do dataset do elemento clicado (event.target)
       const { id } = event.target.dataset;
     
-      // Busca o produto com o ID especificado na lista "jogos" usando o método find
+      // Busca o produto com o ID especificado na lista "jogos" usando o método find , Jogos existe no contexto do carrinho e jogos.js serem executados na mesma pagina
       const jogo = jogos.find((jogo) => jogo.id === parseInt(id));
     
       // Se o produto com o ID especificado for encontrado na lista "jogos"
@@ -29,7 +29,7 @@ function addProductToCart(event) {
 
           // Chama a função ListaCarrinho para atualizar a interface ou exibir os itens no carrinho
           ListaCarrinho();
-          consoleArrayJogos();
+          consoleArrayJogos(); //mensagem de debug para mostrar quando os items sao adicionados ao carrinho
       }
   }
 }
@@ -135,6 +135,8 @@ document.querySelector("#clearCart").addEventListener("click", () => {
     atualizarContador();
     atualizarTotal();
 });
+
+
 
 function atualizarContador() {
   const carrinho = JSON.parse(localStorage.getItem('carrinho'));

@@ -1,6 +1,6 @@
 const jogos = [
-    { id: 1, nome: "The Last of Us Part II", plataforma: "playstation", precoAntigo: "R$ 299,00", precoAtual: "R$ 199,99", imagem: "images/the-last-of -us-parte-2.jpg" },
-    { id: 2, nome: "Halo Infinite", plataforma: "xbox", precoAntigo: "R$ 249,00", precoAtual: "R$ 179,99", imagem: "images/Halo Infinite.jpg" },
+    { id: 1, nome: "The Last of Us Part II", plataforma: "playstation", precoAntigo: "R$ 259,00", precoAtual: "R$ 150,99", imagem: "images/the-last-of -us-parte-2.jpg" },
+    { id: 2, nome: "Halo Infinite", plataforma: "xbox", precoAntigo: "R$ 150,00", precoAtual: "R$ 90,99", imagem: "images/Halo Infinite.jpg" },
     { id: 3, nome: "Cyberpunk 2077", plataforma: "steam", precoAntigo: "R$ 299,00", precoAtual: "R$ 159,99", imagem: "images/Cyberpunk 2077.jpg" },
     { id: 4, nome: "Hollow Knight", plataforma: "steam", precoAntigo: "R$ 80,00", precoAtual: "R$ 40,99", imagem: "images/Hollow Knight.jpg" },
     { id: 5, nome: "Red Dead Redemption 2", plataforma: "xbox", precoAntigo: "R$ 319,00", precoAtual: "R$ 209,99", imagem: "images/Red Dead Redemption 2.jpg" },
@@ -74,19 +74,21 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (bodyId === "ofertas") {
         jogosFiltrados = jogos.filter(jogo => {
             const precoAtual = parseFloat(jogo.precoAtual.replace("R$", "").replace(",", "."));
-            return precoAtual < 150; // Filtra jogos com preço abaixo de R$ 150
+            return precoAtual < 100; // Filtra jogos com preço abaixo de R$ 150
         });
     } else {
         jogosFiltrados = jogos.filter(jogo => jogo.plataforma === bodyId); // // Filtra os jogos pela plataforma correspondente ao ID do body
     }
 
-    // Aqui eu agrupo os meus jogos em grupo de 5 JOGOS atravez do indices multiplos de 5 usando REDIUCE
+    // Aqui eu agrupo os meus jogos em grupo de 5 JOGOS atravez do indices multiplos de 5 usando REDUCE DELICIA MARAVILHA MLK
     const jogosAgrupados = jogosFiltrados.reduce((acumulador, jogo, index) => {
         //se o indice for um multiplo de 5 (5,10,15,20..) , eu crio sub grupos com 5 objetos cada
          //usando o meu acumulador sempre que um indice for multiplo de 5 eu crio um subarray acumulador.push([]) cria um subarray dentro do acumulador
         if (index % 5 === 0) acumulador.push([]);
         //usando o meu acumulador sempre que um indice for multiplo de 5 eu crio um subarray e adiciono os jogos anteriores dentro dele (index 5 cria subarray e recebe os itens 0,1,2,3,4)
+        //adiciona o item jogo ao último subgrupo do acumulador (o mais recente subarray criado).
         acumulador[acumulador.length - 1].push(jogo);
+        
         //no final eu retorno meu accumulador contendo os subgrupos de 5 objetos 
         return acumulador;
     }, []);
@@ -96,12 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
     jogosAgrupados.forEach(grupo => criarCards(grupo));
 
     //Funcao de Debug para visualizar os grupos
-    jogosAgrupados.forEach(grupo =>console.log(grupo))
+    jogosAgrupados.forEach(grupo =>console.log(grupo));
      
 });
 
 
- //console.log(jogos)
+ console.log(jogos)
 
 
 function criarCards(grupo) {

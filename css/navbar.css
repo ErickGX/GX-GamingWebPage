@@ -111,31 +111,28 @@ a:hover {
 /* Navbar para dispositivos pequenos */
 
 @media (max-width: 768px) {
-    /* Esconde os links de navegação padrão */
     .nav-menu {
-        display: none; /* Esconde o menu inicialmente */
+        display: none; /* Esconde a lista de links */
         flex-direction: column;
-        position: absolute;
-        top: 60px;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.9);
+        position:absolute;
+        top: 100%; /* Aparece logo abaixo do nav */
         left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
         width: 100%;
-        text-align: center;
-        padding: 10px;
+        padding: 1rem 0;
+        transition: all 1s ease-in-out;
     }
 
-    /* Exibe o ícone do hambúrguer */
+    .nav-links {
+        display: flex;
+        justify-content: space-between; /* Mantém hambúrguer e carrinho alinhados */
+        align-items: center;
+    }
+
     .hamburguer {
-        display: block;
+        display: block; /* Exibe o botão hambúrguer */
     }
+    
 
-    /* Exibe o menu quando a classe 'active' for adicionada */
-    .nav-menu.active {
-        display: flex; /* Torna o menu visível */
-    }
-
-    /* Estiliza os itens do menu */
-    .nav-menu li {
-        margin: 10px 0;
-    }
 }

@@ -239,12 +239,30 @@ button .fas{ /*Botao do icon de carrinho */
 @media (max-width: 1024px) {
     .container {
         padding: 20px;
-        justify-content: space-around;
+        justify-content: flex-start;
+        overflow-x: auto;
     }
 
     .card {
-        width: 280px;
-        height: 350px;
+        width: 180px;
+        height: 250px;
+    }
+
+    .imgJogo .img {
+        width: 160px;
+        height: 120px;
+    }
+
+    .nomeJogo p {
+        font-size: 1rem;
+    }
+
+    .precoJogo p {
+        font-size: 1rem;
+    }
+
+    .btnComprar {
+        font-size: 0.9rem;
     }
 }
 

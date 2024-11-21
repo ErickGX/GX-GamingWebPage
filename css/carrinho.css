@@ -12,8 +12,8 @@
     position: fixed;
     display: flex;
     flex-direction: column; /* Organiza os itens na vertical */
-    width: 20vw;
-    max-height: 40vh;  /* Altura máxima do carrinho (ajuste conforme necessário) */
+    width: 25vw;
+    max-height: 60vh;  /* Altura máxima do carrinho (ajuste conforme necessário) */
     /* height: 100%; Permite que o carrinho ocupe toda a altura disponível até a altura máxima */
     background-color: rgba(28, 49, 184, 0.902);
     overflow-y: auto;  /* Habilita o scroll quando o conteúdo ultrapassar o tamanho */
@@ -94,18 +94,60 @@
 
 
 
-/* Carrinho em telas pequenas */
+@media (max-width: 1920px) {
+    #containerCarrinho{
+        width: 20vw;
+        max-height: 50vh; 
+    }
+}
+
+@media (max-width: 1440px) {
+    #containerCarrinho{
+        width: 25vw;
+        max-height: 70vh; 
+    }
+}
+@media (max-width: 1366px) {
+    /* Estilos para telas de até 1280px */
+    #containerCarrinho{
+        width: 30vw;
+        max-height: 55vh; 
+    }
+}
+
+
+@media (max-width: 1280px) {
+    #containerCarrinho{
+        width: 30vw;
+        max-height: 55vh; 
+    }
+}
+
+@media (max-width: 1024px) {
+    #containerCarrinho{
+        width: 35vw;
+        max-height: 60vh; 
+    }
+}
+
+@media (max-width: 900px) {
+    #containerCarrinho{
+        width: 45vw;
+        max-height: 60vh; 
+    }
+}
+
 @media (max-width: 768px) {
-    #carrinhoDireita.carrinho {
-        width: 80vw; /* Ajusta a largura para 80% da tela */
-        margin-top: 80px !important; /* Ajusta o espaço superior para dispositivos móveis */
+    #containerCarrinho{
+        width: 45vw;
+        max-height: 60vh; 
     }
 
-    #containerCarrinho {
-        width: 100%; /* Garante que o carrinho ocupe toda a largura disponível */
-        max-height: 60vh; /* Limita a altura do carrinho em telas menores */
+    #CarrinhoDireita{
+        justify-content: flex-end;
     }
 
+    
     .carrinhoHeader {
         font-size: 1.5rem; /* Diminui o tamanho da fonte no cabeçalho */
     }
@@ -115,23 +157,71 @@
     }
 }
 
-/* Carrinho em telas muito pequenas (smartphones) */
-@media (max-width: 480px) {
-    #carrinhoDireita.carrinho {
-        width: 100vw; /* O carrinho ocupa toda a largura da tela */
+
+@media (max-width: 700) {
+    #containerCarrinho{
+        width: 45vw;
+        max-height: 60vh; 
+    }
+}
+
+@media (max-width: 660) {
+    #containerCarrinho{
+        width: 70vw;
+        max-height: 60vh; 
+    }
+}
+
+@media (max-width: 627) {
+    #containerCarrinho{
+        width: 70vw;
+        max-height: 60vh; 
     }
 
-    #containerCarrinho {
-        max-height: 50vh; /* Reduz a altura para dispositivos muito pequenos */
-    }
-
-    .carrinhoHeader {
-        font-size: 1.2rem; /* Ajuste adicional para o tamanho da fonte */
-    }
-
-    .carrinhoFooter {
-        font-size: 1rem; /* Ajuste adicional para o tamanho da fonte */
+    #CarrinhoDireita{
+        margin-top: 518px;
     }
 }
 
 
+@media (max-width: 472px) {
+    
+    #CarrinhoDireita{
+        justify-content: flex-end;
+    }
+
+
+    #containerCarrinho {
+        max-height: 60vh; 
+        margin-top: 238px;
+    }
+
+    .carrinhoHeader {
+        font-size: 1.2rem; 
+    }
+
+    .carrinhoFooter {
+        font-size: 1rem; 
+    }
+}
+
+
+@media (max-width: 320px) {
+    #CarrinhoDireita{
+        justify-content: flex-end;
+    }
+
+
+    #containerCarrinho {
+        max-height: 50vh; 
+        
+    }
+
+    .carrinhoHeader {
+        font-size: 1.2rem; 
+    }
+
+    .carrinhoFooter {
+        font-size: 1rem; 
+    }
+}
